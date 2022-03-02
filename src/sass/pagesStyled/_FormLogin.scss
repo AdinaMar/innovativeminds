@@ -1,0 +1,144 @@
+.wrapper{
+background: black;
+
+margin: 100px auto;
+width: 1000px;
+box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5), 0 7px 20px 0 rgba(0, 0, 0, 0.5);
+position: relative;
+border-radius: 20px;
+height: 750px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+.container {
+    
+  
+   
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: relative;
+ 
+    img {
+        width:100%;
+        height: 750px;
+        object-fit: cover;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    .overlay{
+        position: absolute;
+        top:290px;
+        bottom:0;
+        right:0;
+        left:150px;
+        width:50%;
+        height:18%;
+        background-color: rgba(0, 139, 139, 0.664);
+        border-radius: 50px;
+        border-color: black;
+       
+
+        h2{
+            font-size: 45px;
+            font-weight: 400;
+            color: $white;
+            display: flex;
+            text-align: center;
+            margin: 10px;
+
+        }
+
+    }
+}
+
+.form-container {
+    background: $dark_green;
+    width:100%;
+    height: 750px;
+  
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+   
+    position: relative;
+    h1 {
+        @include titles;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin-top:90px;
+        cursor: pointer;
+    }
+
+    .form-inputs{
+        width: 100%;
+        height:480px;
+        background: #f1edea;
+        position: absolute;
+        bottom: 0;
+        border-bottom-right-radius: 20px;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+ .inputs {
+     display: flex;
+     flex-direction: column;
+     margin-bottom: 30px;
+
+
+     p{
+        font-size: 12px;
+        margin-top: 10px;
+        color: #f00e0e;
+     }
+     label{
+         margin-bottom:10px;
+         font-size: 16px;
+         font-weight:500;
+         color: rgb(73, 71, 71);
+     }
+     input {
+         border-radius: 20px;
+         padding:12px;
+         border: 1px solid grey;
+         background: white;
+         width: 300px;
+         outline: none;
+     &:active, &:focus
+    {
+        border-color:rgba(0, 139, 139, 0.664);
+    }}
+ }
+      
+ .input-btn {
+    width: 30%;
+    height: 45px;
+    margin-top: 10px;
+    border-radius: 20px;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 139, 139) 0%,
+      rgb(0, 232, 236) 100%
+    );
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+  
+  
+  &:hover {
+    cursor: pointer;
+    background: linear-gradient(
+      90deg,
+      rgb(6, 143, 125) 0%,
+      rgb(4, 129, 119) 100%
+    );
+    transition: all 0.4s ease-out;
+  } }
+}
+}
+}
