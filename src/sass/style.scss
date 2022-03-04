@@ -3,7 +3,11 @@
 @import "/src/sass/partials/variables";
 @import "./partials/mixins";
 @import "style/App.scss";
-@import "pagesStyled/FormLogin";
+@import "pagesStyled/FormLogin",
+"pagesStyled/HomeUser",
+"pagesStyled/UserCard",
+"pagesStyled/UserActivities";
+
 
 *{
     margin:0;

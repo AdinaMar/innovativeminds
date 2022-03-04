@@ -1,0 +1,27 @@
+.home-wrapper {
+    background-image: url("../../images/HomePageBackground.png");
+    background-size: cover;
+    height: 100vh;
+  
+    background-position: center;
+    position: relative;
+
+
+    .menu {
+        position: absolute;
+        top:20px;
+        left: 20px;
+        font-size: 40px;
+        color:#fff;
+        cursor: pointer;
+        z-index: 9;
+    
+    }
+    .close-menu {
+        color:#fff;
+        position: absolute;
+        top:20px;
+        left: 20px;
+        font-size: 40px;
+    }
+}

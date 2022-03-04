@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import FormLogin from '../components/loginForm/FormLogin'
-import Success from './Success';
+import HomeUser from './HomeUser';
 
 const Form = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -12,7 +12,7 @@ const Form = () => {
 <div>
     {!isSubmitted ? (
         <FormLogin submitForm={submitForm} />) :
-        (<Success />)}
+        (<HomeUser/>)}
     
 </div>
 
