@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {useTable, useGlobalFilter, usePagination} from 'react-table'
 import { useMemo } from 'react'
 import { COLUMNS } from '../../columns'
@@ -12,117 +12,19 @@ import {FaUserPlus} from 'react-icons/fa'
 import { Link, Route, Routes, Outlet } from 'react-router-dom'
 import AddUser from '../../../pages/AddUser'
 import { useState } from 'react'
-
-const datas = [
-  {name: "Adina Martiniuc",
-   email: "adinamartiniuc25@gmail.com",
-   role: "admin",
-   gender: "Female",
-   nationality: "Romanian",
-   birthdate: "26/03/1997",
-   buttons: <div className='icons'> <FiEdit/> <VscActivateBreakpoints/>  <AiOutlineUsergroupDelete/> </div>
-   
-},
-
-{name: "Adina Martiniuc",
-email: "adinamartiniuc25@gmail.com",
-role: "employee",
-gender: "Female",
-nationality: "Romanian",
-birthdate: "26/03/1997",
-buttons: <div className='icons'> <FiEdit/> <VscActivateBreakpoints/>  <AiOutlineUsergroupDelete/> </div>
-},
-
-{name: "Alina Martiniuc",
-email: "adinamartiniuc25@gmail.com",
-role: "admin",
-gender: "Female",
-nationality: "Romanian",
-birthdate: "26/03/1997",
-buttons: <div className='icons'> <FiEdit/> <VscActivateBreakpoints/>  <AiOutlineUsergroupDelete/> </div>
-},
-
-{name: "Sara Martiniuc",
-email: "adinamartiniuc25@gmail.com",
-role: "office-admin",
-gender: "Female",
-nationality: "Romanian",
-birthdate: "26/03/1997",
-buttons: <div className='icons'> <FiEdit/> <VscActivateBreakpoints/>  <AiOutlineUsergroupDelete/> </div>
-},
-{name: "Dorin Tudose",
-email: "adinamartiniuc25@gmail.com",
-role: "office-admin",
-gender: "Female",
-nationality: "Romanian",
-birthdate: "26/03/1997",
-buttons: <div className='icons'> <FiEdit/> <VscActivateBreakpoints/>  <AiOutlineUsergroupDelete/> </div>
-},
-{name: "Camelia Cojocaru",
-email: "adinamartiniuc25@gmail.com",
-role: "office-admin",
-gender: "Female",
-nationality: "Romanian",
-birthdate: "26/03/1997",
-buttons: <div className='icons'> <FiEdit/> <VscActivateBreakpoints/>  <AiOutlineUsergroupDelete/> </div>
-},
-{name: "Madalina Martiniuc",
-email: "adinamartiniuc25@gmail.com",
-role: "office-admin",
-gender: "Female",
-nationality: "Romanian",
-birthdate: "26/03/1997",
-buttons: <div className='icons'> <FiEdit/> <VscActivateBreakpoints/>  <AiOutlineUsergroupDelete/> </div>
-},
-{name: "Ionela Martiniuc",
-email: "adinamartiniuc25@gmail.com",
-role: "office-admin",
-gender: "Female",
-nationality: "Romanian",
-birthdate: "26/03/1997",
-buttons: <div className='icons'> <FiEdit/> <VscActivateBreakpoints/>  <AiOutlineUsergroupDelete/> </div>
-},
-{name: "Madalina Martiniuc",
-email: "adinamartiniuc25@gmail.com",
-role: "office-admin",
-gender: "Female",
-nationality: "Romanian",
-birthdate: "26/03/1997",
-buttons: <div className='icons'> <FiEdit/> <VscActivateBreakpoints/>  <AiOutlineUsergroupDelete/> </div>
-},
-{name: "Sara Martiniuc",
-email: "adinamartiniuc25@gmail.com",
-role: "office-admin",
-gender: "Female",
-nationality: "Romanian",
-birthdate: "26/03/1997",
-buttons: <div className='icons'> <FiEdit/> <VscActivateBreakpoints/>  <AiOutlineUsergroupDelete/> </div>
-},
-{name: "Adina Martiniuc",
-email: "adinamartiniuc25@gmail.com",
-role: "office-admin",
-gender: "Female",
-nationality: "Romanian",
-birthdate: "26/03/1997",
-buttons: <div className='icons'> <FiEdit/> <VscActivateBreakpoints/>  <AiOutlineUsergroupDelete/> </div>
-},
-{name: "Serena Martiniuc",
-email: "adinamartiniuc25@gmail.com",
-role: "office-admin",
-gender: "Female",
-nationality: "Romanian",
-birthdate: "26/03/1997",
-buttons: <div className='icons'> <FiEdit/> <VscActivateBreakpoints/>  <AiOutlineUsergroupDelete/> </div>
-},
+import api from '../../../api/users'
 
 
-]
 
 
 
 const UsersManagement = () => {
+
+  const [users, setUsers] = useState([])
+
+
 const columns = useMemo(() => COLUMNS, [])
-const data = useMemo(() => datas, [])
+const data = users; {/*useMemo(() => users, []) */}
  const {
   getTableProps,
   getTableBodyProps,
@@ -145,19 +47,33 @@ const {globalFilter} = state
 
 
 
+const retriveUsers = async () => {
+  const response = await api.get("/users");
+  return response.data;
+}
+
+useEffect(() => {
+  const getAllUsers = async () => {
+    const allUsers = await retriveUsers();
+    if(allUsers) setUsers(allUsers)
+  }
+
+  getAllUsers();
+}, []);
+
   return (
     
     <div className='management-wrapper'>
       <div className="find-users">
     
       <GlobalFilter  filter={globalFilter} setFilter={setGlobalFilter}/>
-      <span className="hovertext">
+      
       
         <Link to="/UsersManagement/AddUser">
          
  <FaUserPlus className="add-user" />  </Link>
  
- Add New User!</span> 
+ 
  
 </div>
 

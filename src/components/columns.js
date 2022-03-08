@@ -1,3 +1,7 @@
+import { VscActivateBreakpoints } from 'react-icons/vsc'
+import {AiOutlineUsergroupDelete} from 'react-icons/ai'
+import {FiEdit} from 'react-icons/fi'
+
 export const COLUMNS =   [
     {
       Header: 'Name',
@@ -25,7 +29,8 @@ export const COLUMNS =   [
     },
     {
     Header: '',
-    accessor: 'buttons'
+    id: 'buttons',
+    Cell: () => <div className='icons'> <FiEdit/> <VscActivateBreakpoints/>  <AiOutlineUsergroupDelete/> </div>
     }
    
   ]

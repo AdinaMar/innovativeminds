@@ -1,7 +1,7 @@
 .wrapper{
 
 /*background: black;*/
-left: 55%;
+left: 45%;
 margin: 100px;
 /*width: 1000px;*/
 width:500px;
@@ -41,7 +41,11 @@ align-items: flex-end;
         background-color: rgba(8, 69, 65, 0.74);
         border-radius: 50px;
         border-color: black;
-       
+       &:hover {
+        width:60%;
+        height:22%;
+        transition: all 500ms;
+       }
 
         h2{
             font-size: 45px;
@@ -50,7 +54,12 @@ align-items: flex-end;
             display: flex;
             text-align: center;
             margin: 10px;
-
+&:hover{
+  font-size:56px;
+  transition: all 500ms;
+  font-size-adjust: 20px;
+  
+}
         }
 
     }
