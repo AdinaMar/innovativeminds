@@ -1,0 +1,158 @@
+.addUser-container{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width:90%;
+color: white;
+
+.addUser-wrapper {
+    background-color: rgba(8, 69, 65, 0.74);
+    border-radius: 20px;
+    display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 25px;
+h1 {
+    margin-bottom: 25px;
+}
+
+form {
+    .names{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap:120px;
+        .firstlastname {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                margin-bottom:15px;
+         font-size: 18px;
+         font-weight:500;
+         color: white;
+            }
+        input {
+            border-radius: 20px;
+         padding:10px;
+         border: 1px solid grey;
+         background: white;
+         width: 300px;
+         outline: none;
+         margin-bottom:35px;
+        }
+        }
+
+    
+}
+.firstlastname {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        margin-bottom:15px;
+        font-size: 18px;
+        font-weight:500;
+        color: white;
+    }
+    input {
+        border-radius: 20px;
+        padding:10px;
+        border: 1px solid grey;
+        background: white;
+        width: 715px;
+        outline: none;
+        margin-bottom:35px;
+    }
+}
+
+.roles{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:120px;
+    .single-role {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin-bottom:15px;
+            font-size: 18px;
+            font-weight:500;
+            color: white;
+        }
+        select {
+            
+            border-radius: 20px;
+         padding:10px;
+         border: 1px solid grey;
+         background: white;
+         width: 300px;
+         outline: none;
+         margin-bottom:35px;
+
+         option {
+             font-size: 14px;
+             color: grey;
+             border-radius: 15px;
+             margin-bottom:35px;
+             color: grey;
+         }
+        }
+    }
+}
+.birth {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:120px;
+    .birthNationality {
+        display: flex;
+        flex-direction: column;
+
+        label{
+        margin-bottom:15px;
+        font-size: 18px;
+        font-weight:500;
+        color: white;
+        }
+        input {
+            border-radius: 20px;
+         padding:10px;
+         border: 1px solid grey;
+         background: white;
+         width: 300px;
+         outline: none;
+         margin-bottom:35px;
+        }
+        input[type="date"] {
+            border-radius: 20px;
+            padding:10px;
+            border: 1px solid grey;
+            background: white;
+            width: 300px;
+            outline: none;
+            margin-bottom:35px;
+            font-size: 14px;
+           color: grey;
+        }
+    }
+}
+}
+button {
+    background-color:rgb(2, 138, 131, 0.7);
+           color: #fff;
+           cursor: pointer;
+           padding: 16px 40px;
+           margin-top: 40px;
+           margin-bottom:35px;
+           border-radius: 20px;
+           font-size: 25px;
+           border:2px solid $dark_green;
+           font-weight:700;
+
+           &:hover {
+               background-color:$dark_green;
+           }
+}
+}
+}

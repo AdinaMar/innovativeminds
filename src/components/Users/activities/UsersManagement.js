@@ -8,7 +8,10 @@ import {FiEdit} from 'react-icons/fi'
 import GlobalFilter from './GlobalFilter'
 import {IoIosArrowBack} from 'react-icons/io'
 import {IoIosArrowForward} from 'react-icons/io'
-
+import {FaUserPlus} from 'react-icons/fa'
+import { Link, Route, Routes, Outlet } from 'react-router-dom'
+import AddUser from '../../../pages/AddUser'
+import { useState } from 'react'
 
 const datas = [
   {name: "Adina Martiniuc",
@@ -140,10 +143,23 @@ const data = useMemo(() => datas, [])
 
 const {globalFilter} = state
 
+
+
   return (
     
     <div className='management-wrapper'>
+      <div className="find-users">
+    
       <GlobalFilter  filter={globalFilter} setFilter={setGlobalFilter}/>
+      <span className="hovertext">
+      
+        <Link to="/UsersManagement/AddUser">
+         
+ <FaUserPlus className="add-user" />  </Link>
+ 
+ Add New User!</span> 
+ 
+</div>
 
 <table {...getTableProps()}>
   <thead>
@@ -248,7 +264,13 @@ const {globalFilter} = state
 
       </table> */ }
        
-       
+     
+
+  
+{/*<Route path="/UsersManagement" >
+<Route path="/UsersManagement/AddUser" element={<AddUser/>} />
+</Route>
+</Routes> */}
        </div>
   )
 } 

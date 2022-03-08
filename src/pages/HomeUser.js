@@ -5,6 +5,7 @@ import {GiHamburgerMenu} from 'react-icons/gi';
 import {AiOutlineClose} from 'react-icons/ai'
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import UsersManagement from '../components/Users/activities/UsersManagement';
+import AddUser from './AddUser';
 
 
 
@@ -38,6 +39,8 @@ const HomeUser = () => {
 {/*<Route exact path="/" element={<UserCard/>} />*/}
   
 <Route path="/UsersManagement" element={<UsersManagement/>} />
+<Route path="/UsersManagement/AddUser" element={<AddUser/>} />
+
 </Routes>
 </div>
  </BrowserRouter>

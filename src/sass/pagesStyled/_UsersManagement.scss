@@ -7,8 +7,49 @@
     justify-content: center;
     margin: auto;
     width:90%;
+    .find-users{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: flex-start;
+
+      .add-user{
+        color:$dark_green;
+        font-size: 25px;
+        margin-left: 18px;
+        margin-top: 5px;
     
-    table {
+      .hovertext {
+        position: relative;
+        border-bottom: 1px dotted black;
+      
+      
+      &:before {
+        content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: max-content;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 5px;
+  transition: opacity 1s ease-in-out;
+
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 110%;
+      }
+    
+      &:hover:before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  }   
+   table {
         
        width:95%;
         background-color:  rgba(8,69,69, 0.85);
@@ -72,7 +113,7 @@
     
     input {
   border-radius: 20px;
-  padding: 10px;
+  padding: 12px;
   outline: none;
   border: 1px solid $dark_green;
   background-color:hsl(0, 11%, 86%);
