@@ -1,36 +1,41 @@
 .wrapper{
-background: black;
 
-margin: 100px auto;
-width: 1000px;
+/*background: black;*/
+left: 55%;
+margin: 100px;
+/*width: 1000px;*/
+width:500px;
 box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5), 0 7px 20px 0 rgba(0, 0, 0, 0.5);
 position: relative;
 border-radius: 20px;
 height: 750px;
 display: grid;
-grid-template-columns: 1fr 1fr;
-.container {
+align-items: flex-end;
+
+/*grid-template-columns: 1fr 1fr;*/
+
+/*.container {*/
     
   
    
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    position: relative;
+    /*border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;*/
+    
  
-    img {
+   /* img {
         width:100%;
         height: 750px;
         object-fit: cover;
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
-    }
+    } */
 
     .overlay{
         position: absolute;
-        top:290px;
-        bottom:0;
-        right:0;
-        left:150px;
+        top:250px;
+      
+        right: 775px;
+     
         width:50%;
         height:18%;
         background-color: rgba(0, 139, 139, 0.664);
@@ -49,15 +54,17 @@ grid-template-columns: 1fr 1fr;
         }
 
     }
-}
+/*}*/
 
 .form-container {
     background: $dark_green;
     width:100%;
     height: 750px;
-  
+    border-radius: 20px;
+    
+  /*border-bottom-left-radius: 20px;
     border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-right-radius: 20px;*/
    
     position: relative;
     h1 {
@@ -76,6 +83,7 @@ grid-template-columns: 1fr 1fr;
         position: absolute;
         bottom: 0;
         border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
         display: flex;

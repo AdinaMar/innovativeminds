@@ -3,14 +3,22 @@ import UserActivities from '../components/Users/UserActivities'
 import UserCard from '../components/Users/UserCard'
 import {GiHamburgerMenu} from 'react-icons/gi';
 import {AiOutlineClose} from 'react-icons/ai'
+import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import UsersManagement from '../components/Users/activities/UsersManagement';
+
+
 
 const HomeUser = () => {
   const [isActive, setIsActive] = useState(false);
   
-  
+
 
 
   return (
+
+    <>  
+<BrowserRouter>
+  
     <div className="home-wrapper">
 
 {(!isActive  ? (
@@ -26,9 +34,15 @@ const HomeUser = () => {
   
 
 
+<Routes>
+{/*<Route exact path="/" element={<UserCard/>} />*/}
+  
+<Route path="/UsersManagement" element={<UsersManagement/>} />
+</Routes>
+</div>
+ </BrowserRouter>
 
-
-    </div>
+    </>
   )
 }
 

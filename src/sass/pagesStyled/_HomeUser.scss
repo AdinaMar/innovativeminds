@@ -1,11 +1,12 @@
 .home-wrapper {
-    background-image: url("../../images/HomePageBackground.png");
+    background-image: url("../../images/back.png");
     background-size: cover;
     height: 100vh;
   
     background-position: center;
     position: relative;
-
+display: flex;
+flex-direction: row;
 
     .menu {
         position: absolute;

@@ -9,12 +9,11 @@ const FormLogin = ({submitForm}) => {
     const {handleChange, values, handleSubmit, errors} = useForm(submitForm,validate)
   return (
       <div className="wrapper">
-    <div className="container">
-    <img src={background} alt="office-background"/>
+  
     <div className="overlay">
         <h2>Office Space</h2>
     </div>
-    </div>
+    
     <div className='form-container'>
         <form className="form" onSubmit={handleSubmit}>
             <h1>
