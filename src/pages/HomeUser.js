@@ -9,7 +9,7 @@ import AddUser from './AddUser';
 
 
 
-const HomeUser = () => {
+const HomeUser = (users, setUsers) => {
   const [isActive, setIsActive] = useState(false);
   
 
@@ -38,8 +38,8 @@ const HomeUser = () => {
 <Routes>
 {/*<Route exact path="/" element={<UserCard/>} />*/}
   
-<Route path="/UsersManagement" element={<UsersManagement/>} />
-<Route path="/UsersManagement/AddUser" element={<AddUser/>} />
+<Route path="UsersManagement/*" element={<UsersManagement/>} />
+
 
 </Routes>
 </div>

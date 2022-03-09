@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
 import api from '../api/users'
-import uuid from 'react-native-uuid';
-import { addUser } from '../api/users';
+import { useNavigate } from 'react-router-dom'
 
-const AddUser = () => {
+
+const AddUser = ({users, setUsers, setIsActive}) => {
   
+
+
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
@@ -15,15 +17,7 @@ const AddUser = () => {
     date:""
   })
 
-  const [users, setUsers] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    role: "",
-    gender:"",
-    nationality:"",
-    date:""
-  })
+
 
   const handleChange = e => {
     const {name, value} = e.target
@@ -33,25 +27,40 @@ const AddUser = () => {
     })
   }
 
-  const addUserDetails = async() => {
-    await addUser(user);
+  let navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     
+    const id = users.length ? users[users.length -1].id + 1 : 1;
+    const newUser = {id, name: user.firstName + ' ' + user.lastName, email: user.email, role: user.role, gender: user.gender, nationality: user.nationality, birthdate: user.date};
+  try {
+    const response = await api.post("/users", newUser)
+    const allUsers = [...users, response.data];
+    setUsers(allUsers);
+    setUser({
+    firstName: "",
+    lastName: "",
+    email: "",
+    role: "",
+    gender:"",
+    nationality:"",
+    date:""
+    })
+    setIsActive(true)
+    navigate(-1)
+  } catch(err) {
+    console.log(`Error: ${err.message}`)
   }
- { /*const addUser =  async (user) => {
-    const request = {
-      id: uuid(),
-      ...user
-    } 
 
-    const response = await api.post("/users", request)
-    setUsers([...users, response]);
+  }
 
-  } */ }
+
   return (
     <div className="addUser-container">
       <div className='addUser-wrapper'>
       <h1>Add User</h1>
-      <form>
+      <form onSubmit={ handleSubmit }>
      <div className="names">
        <div className="firstlastname">
        <label htmlFor="firstName">First Name:</label>
@@ -72,17 +81,19 @@ const AddUser = () => {
          <div className="single-role">
          <label htmlFor="role">Role:</label>
          <select name="role" value={user.role} onChange={handleChange}>
-           <option value="employee">Employee</option>
-           <option value="admin">Admin</option>
-           <option value="officeAdmin">Office-Admin</option>
+           <option value="">Select</option>
+           <option value="Employee">Employee</option>
+           <option value="Admin">Admin</option>
+           <option value="OfficeAdmin">Office-Admin</option>
            </select>
            </div>
            <div className='single-role'>
          <label htmlFor="gender">Gender:</label>
          <select name="gender" value={user.gender} onChange={handleChange}>
-           <option value="female">Female</option>
-           <option value="male">Male</option>
-           <option value="other">Other</option>
+         <option value="">Select</option>
+           <option value="Female">Female</option>
+           <option value="Male">Male</option>
+           <option value="Other">Other</option>
            </select>
          </div>
          </div>
@@ -97,9 +108,9 @@ const AddUser = () => {
            <input type="text" name="nationality" value={user.nationality} onChange={handleChange}></input>
            </div>
            </div>
-           
+           <button type='submit'>ADD</button>
        </form>
-       <button onClick={()=> addUserDetails()}>ADD</button>
+       
       </div>
       </div>
   )
