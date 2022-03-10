@@ -63,7 +63,7 @@ form {
         padding:10px;
         border: 1px solid grey;
         background: white;
-        width: 715px;
+        width: 300px;
         outline: none;
         margin-bottom:35px;
     }
@@ -157,7 +157,32 @@ button {
                background-color:$dark_green;
            }
 }
+.email-password{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:120px;
+    .password{
+        display: flex;
+    flex-direction: column;
+
+    label{
+        margin-bottom:15px;
+        font-size: 18px;
+        font-weight:500;
+        color: white;
+        }
+        input {
+            border-radius: 20px;
+         padding:10px;
+         border: 1px solid grey;
+         background: white;
+         width: 300px;
+         outline: none;
+         margin-bottom:35px;
+    }
+}
 }
 
+}
 }
 }

@@ -1,3 +1,6 @@
+{/*
+
+
 import React, {useMemo} from 'react'
 import { useTable, useGlobalFilter, usePagination } from 'react-table'
 import {IoIosArrowBack} from 'react-icons/io'
@@ -14,7 +17,7 @@ const UserTable = ({users, isActive, setIsActive}) => {
 
     const columns = useMemo(() => COLUMNS, [])
 const data = users; {/*useMemo(() => users, []) */}
- const {
+ {/* const {
   getTableProps,
   getTableBodyProps,
   headerGroups,
@@ -98,7 +101,7 @@ const {globalFilter} = state
 </div>
 
 
-
+*/}
 
 
 
@@ -161,10 +164,10 @@ const {globalFilter} = state
 <Route path="/UsersManagement/AddUser" element={<AddUser/>} />
 </Route>
 </Routes> */}
-     </div>
+     {/*</div>
 )
 } 
 
  
 
-export default UserTable
+export default UserTable */}

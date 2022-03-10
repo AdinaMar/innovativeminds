@@ -1,143 +1,105 @@
 .management-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color:rgba(255, 255, 255, 0.626);
+  font-size: 14px;
+  justify-content: center;
+  margin: auto;
+  width:90%;
+
+  .find-users{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    color:rgba(255, 255, 255, 0.726);
-    font-size: 14px;
-    justify-content: center;
-    margin: auto;
-    width:90%;
-    .find-users{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: flex-start;
-
-      .add-user{
-        color:$dark_green;
-        font-size: 32px;
-        margin-left: 18px;
-        margin-top: 5px;
-    
-      .hovertext {
-        position: relative;
-        border-bottom: 1px dotted black;
-      
-      
-      &:before {
-        content: attr(data-hover);
-  visibility: hidden;
-  opacity: 0;
-  width: max-content;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 5px;
-  padding: 5px 5px;
-  transition: opacity 1s ease-in-out;
-
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  top: 110%;
-      }
-    
-      &:hover:before {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-  }
-  }   
-   table {
-        
-       width:95%;
-        background-color:  rgba(8,69,69, 0.85);
-       /* border: 1px solid white;*/
-       /* width: 900px;*/
-        height: 200px;
-        border-radius: 20px;
-        
-      
-        tr {
-           
-          /*  border-bottom: 1px solid white;*/
-            line-height:40px;
-           
-        
-            
-        }
-      th {
-        margin:5px;
-        border-right: 1px solid white; 
-        border-bottom: 1px solid white;
-        padding-right: 15px;
-        
-        padding-left: 15px;
-    
-      }
-        
-      td {
-        margin:5px;
-        text-align: center;
-        border-bottom: 1px solid white;
-        border-right: 1px solid white; 
-        padding-right: 15px;
-        
-        padding-left: 15px;
-      padding-top: 6px;
-      padding-bottom: 6px;
-
-        
-        &:last-child {
-            border-right: none;
-           
-        }
-      
-      }
-.icons {
-    
-    font-size: 20px;
-  
-}
+    margin-bottom: 40px;
+label {
+  color: rgba(255, 255, 255, 0.781);
+  font-size: 25px;
+  font-weight: 600;
 
 }
-.globalFilter{
-    margin-bottom: 55px;
-    margin-left: 20px;
-    color:$dark_green;
-    font-weight: 700;
-    font-size: 25px;
-    align-self: flex-start;
-    justify-self: flex-start;
-    
     input {
-  border-radius: 20px;
-  padding: 12px;
-  outline: none;
-  border: 1px solid $dark_green;
-  background-color:hsl(0, 11%, 86%);
-  margin-left: 15px;
+      border-radius: 20px;
+      padding: 12px;
+      outline: none;
+      border: 1px solid $dark_green;
+      background-color:hsl(0, 11%, 86%);
+      margin-left: 15px;
+        }
+
+    .add-user{
+      color:$dark_green;
+      font-size: 32px;
+      margin-left: 18px;
+      margin-top: 5px;
+
+}
+}   
+ table {
+      
+     width:95%;
+      background-color:  rgba(8,69,69, 0.85);
+    border: 1px solid white;
+      width: 900px;
+      height: 200px;
+      border-radius: 20px;
+      color:#fff;
+    
+     tr {
+         
+        /*  border-bottom: 1px solid white;*/
+          line-height:40px;
+         
+      
+          
+      }
+    th {
+      margin:5px;
+      border-right: 1px solid white; 
+      border-bottom: 1px solid white;
+      padding-right: 15px;
+      
+      padding-left: 15px;
+  
     }
+      
+    td {
+      margin:5px;
+      text-align: center;
+      border-bottom: 1px solid white;
+      border-right: 1px solid white; 
+      padding-right: 15px;
+      
+      padding-left: 15px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+      
+      &:last-child {
+          border-right: none;
+         
+      }
+    
+    }
+.icons {
+  
+  font-size: 20px;
+color: white;
+cursor: pointer;
+
 }
 
-.next-previous {
-    display: flex;
-    .pagination {
-        
-        font-size: 35px;
-        border:1px solid $dark_green;
-        border-radius: 10px;
-        margin: 10px;
-        display: flex;
-        align-items: center;
-        .arrow {
-            color: $dark_green;
-            font-weight: 700;
-            align-items: center;
-            justify-content: center;
-                }
-    }
-    
 }
+
+
+
+  .pagination {
+      
+     
+     margin-top:15px;
+      
+  }
+  
 }

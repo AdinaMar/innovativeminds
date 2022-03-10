@@ -6,7 +6,7 @@ import {AiOutlineClose} from 'react-icons/ai'
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import UsersManagement from '../components/Users/activities/UsersManagement';
 import AddUser from './AddUser';
-
+import EditUser from './EditUser';
 
 
 const HomeUser = (users, setUsers) => {
@@ -39,7 +39,8 @@ const HomeUser = (users, setUsers) => {
 {/*<Route exact path="/" element={<UserCard/>} />*/}
   
 <Route path="UsersManagement/*" element={<UsersManagement/>} />
-
+<Route exact path="/addUser" element={<AddUser/>} />
+<Route exact path="/editUser/:id" element={<EditUser />} />
 
 </Routes>
 </div>

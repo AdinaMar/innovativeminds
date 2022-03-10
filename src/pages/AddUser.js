@@ -1,86 +1,83 @@
-import React, {useState} from 'react'
-import api from '../api/users'
-import { useNavigate } from 'react-router-dom'
+import React from 'react'
+import { useState } from 'react'
+import { addUser } from '../../src/api/api'
+import {  useNavigate } from 'react-router-dom'
 
 
-const AddUser = ({users, setUsers, setIsActive}) => {
-  
-
-
-  const [user, setUser] = useState({
+const initialValues = {
     firstName: "",
     lastName: "",
-    email: "",
-    role: "",
+    email:"",
+    role:"",
     gender:"",
+    date:"",
     nationality:"",
-    date:""
-  })
-
-
-
-  const handleChange = e => {
-    const {name, value} = e.target
-    setUser({
-      ...user,
-      [name]: value
-    })
-  }
-
-  let navigate = useNavigate();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+    password:""
     
-    const id = users.length ? users[users.length -1].id + 1 : 1;
-    const newUser = {id, name: user.firstName + ' ' + user.lastName, email: user.email, role: user.role, gender: user.gender, nationality: user.nationality, birthdate: user.date};
-  try {
-    const response = await api.post("/users", newUser)
-    const allUsers = [...users, response.data];
-    setUsers(allUsers);
-    setUser({
-    firstName: "",
-    lastName: "",
-    email: "",
-    role: "",
-    gender:"",
-    nationality:"",
-    date:""
-    })
-    setIsActive(true)
-    navigate(-1)
-  } catch(err) {
-    console.log(`Error: ${err.message}`)
-  }
+}
+const AddUser = () => {
+    
+    const[user, setUser] = useState(initialValues)
+    const{firstName, lastName, email, role, gender, date, nationality, password} = user
+  
+    
+    const navigate = useNavigate();
 
-  }
+    const handleChange = e => {
+     
+        const {name, value} = e.target
+        setUser({
+          ...user,
+          [name]: value
+        })
+      }
 
+      
+
+      const addUserDetails = async () => {
+      
+        const newUser = {name:firstName + " " + lastName, email:email, role:role, gender:gender, birthdate:date, nationality: nationality, password:password}
+          await addUser(newUser);
+          navigate("/UsersManagement")
+      }
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        addUserDetails();
+      }
+
+     
 
   return (
     <div className="addUser-container">
       <div className='addUser-wrapper'>
       <h1>Add User</h1>
-      <form onSubmit={ handleSubmit }>
+      <form onSubmit={handleSubmit}>
      <div className="names">
        <div className="firstlastname">
        <label htmlFor="firstName">First Name:</label>
-       <input type="text" name="firstName" value={user.firstName} onChange={handleChange}/>
+       <input type="text" name="firstName" value={firstName} onChange={handleChange}/>
        </div>
        <div className='firstlastname'>
        <label htmlFor="lastName">Last Name:</label>
-       <input type="text" name="lastName" value={user.lastName} onChange={handleChange}/>
+       <input type="text" name="lastName" value={lastName} onChange={handleChange}/>
        </div>
        </div>
-
+<div className="email-password">
        <div className="firstlastname">
        <label htmlFor="email">E-mail Address:</label>
-       <input type="email" name="email" value={user.email} onChange={handleChange} />
+       <input type="email" name="email" value={email} onChange={handleChange} />
        </div>
 
+<div className="password">
+<label htmlFor="password">Password:</label>
+       <input type="text" name="password" value={password} onChange={handleChange} />
+       </div>
+  </div>
        <div className="roles">
          <div className="single-role">
          <label htmlFor="role">Role:</label>
-         <select name="role" value={user.role} onChange={handleChange}>
+         <select name="role" value={role} onChange={handleChange}>
            <option value="">Select</option>
            <option value="Employee">Employee</option>
            <option value="Admin">Admin</option>
@@ -89,7 +86,7 @@ const AddUser = ({users, setUsers, setIsActive}) => {
            </div>
            <div className='single-role'>
          <label htmlFor="gender">Gender:</label>
-         <select name="gender" value={user.gender} onChange={handleChange}>
+         <select name="gender" value={gender} onChange={handleChange}>
          <option value="">Select</option>
            <option value="Female">Female</option>
            <option value="Male">Male</option>
@@ -101,13 +98,15 @@ const AddUser = ({users, setUsers, setIsActive}) => {
          <div className='birth'>
            <div className="birthNationality">
            <label htmlFor='date'>Birth Date:</label>
-           <input type="date" name="date" value={user.date} onChange={handleChange} />
+           <input type="date" name="date" value={date} onChange={handleChange} />
            </div>
            <div className='birthNationality'>
            <label htmlFor='nationality'>Nationality:</label>
-           <input type="text" name="nationality" value={user.nationality} onChange={handleChange}></input>
+           <input type="text" name="nationality" value={nationality} onChange={handleChange}></input>
            </div>
            </div>
+
+          
            <button type='submit'>ADD</button>
        </form>
        
