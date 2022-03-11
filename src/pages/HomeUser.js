@@ -10,6 +10,9 @@ import EditUser from './EditUser';
 import BuildingManagement from '../components/buildingManagement/BuildingManagement';
 import AddBuilding from '../components/buildingManagement/AddBuilding';
 import EditBuilding from '../components/buildingManagement/EditBuilding';
+import OfficeManagement from '../components/officeManagement/OfficeManagement';
+import AddOffice from '../components/officeManagement/AddOffice';
+import EditOffice from '../components/officeManagement/EditOffice';
 
 const HomeUser = (users, setUsers) => {
   const [isActive, setIsActive] = useState(false);
@@ -46,6 +49,9 @@ const HomeUser = (users, setUsers) => {
 <Route exact path="/buildingManagement" element={<BuildingManagement/>} />
 <Route exact path="/addBuilding" element={<AddBuilding />} />
 <Route exact path="/editBuilding/:id" element={<EditBuilding />} />
+<Route exact path="/officeManagement" element={<OfficeManagement/>} />
+<Route exact path="/addOffice" element={<AddOffice />} />
+<Route exact path="/editOffice/:id" element={<EditOffice />} />
 </Routes>
 </div>
  </BrowserRouter>

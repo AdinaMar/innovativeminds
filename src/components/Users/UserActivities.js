@@ -3,7 +3,7 @@ import {AiOutlineClose} from 'react-icons/ai'
 import { BrowserRouter,Link, Routes, Route} from 'react-router-dom'
 import UsersManagement from './activities/UsersManagement'
 import Routess from '../RoutesAdmin/Routess'
-
+import OfficeManagement from '../officeManagement/OfficeManagement'
 
 const UserActivities = () => {
   return (
@@ -35,9 +35,9 @@ const UserActivities = () => {
             <p>Building Management</p>
             </Link>
 
-            <div className="single-activity">
+            <Link to="/officeManagement"  className="single-activity">
             <p>Office Management</p>
-            </div>
+            </Link>
 
             <div className="single-activity">
             <p>Office Status</p>
