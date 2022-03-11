@@ -18,3 +18,22 @@ export const editUser = async(id, user) => {
 export const deleteUser = async(id) => {
     return await axios.delete(`${url}/${id}`);
 }
+
+const urlBuilding = "http://localhost:3006/buildings";
+export const getBuildings = async (id) => {
+    id = id || '';
+    return await axios.get(`${urlBuilding}/${id}`);
+}
+
+export const deleteBuilding = async(id) => {
+    return await axios.delete(`${urlBuilding}/${id}`);
+}
+
+export const addBuilding = async (building) => {
+    return await axios.post(urlBuilding, building)
+    }
+
+    export const editBuilding = async(id, building) => {
+        return await axios.put(`${urlBuilding}/${id}`, building);
+    }
+    

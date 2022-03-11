@@ -7,7 +7,9 @@ import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import UsersManagement from '../components/Users/activities/UsersManagement';
 import AddUser from './AddUser';
 import EditUser from './EditUser';
-
+import BuildingManagement from '../components/buildingManagement/BuildingManagement';
+import AddBuilding from '../components/buildingManagement/AddBuilding';
+import EditBuilding from '../components/buildingManagement/EditBuilding';
 
 const HomeUser = (users, setUsers) => {
   const [isActive, setIsActive] = useState(false);
@@ -41,7 +43,9 @@ const HomeUser = (users, setUsers) => {
 <Route path="UsersManagement/*" element={<UsersManagement/>} />
 <Route exact path="/addUser" element={<AddUser/>} />
 <Route exact path="/editUser/:id" element={<EditUser />} />
-
+<Route exact path="/buildingManagement" element={<BuildingManagement/>} />
+<Route exact path="/addBuilding" element={<AddBuilding />} />
+<Route exact path="/editBuilding/:id" element={<EditBuilding />} />
 </Routes>
 </div>
  </BrowserRouter>

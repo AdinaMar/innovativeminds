@@ -7,18 +7,7 @@ import { deleteUser, getUsers } from '../../../api/api'
 import { Link } from 'react-router-dom';
 import {FaUserPlus} from 'react-icons/fa'
 import {Pagination} from 'react-custom-pagination'
-{/*import {useTable, useGlobalFilter, usePagination} from 'react-table'
-import { useMemo } from 'react'
-import { COLUMNS } from '../../columns'
-import { VscActivateBreakpoints } from 'react-icons/vsc'
-import {AiOutlineUsergroupDelete} from 'react-icons/ai'
-import {FiEdit} from 'react-icons/fi'
-import GlobalFilter from './GlobalFilter'
-import {IoIosArrowBack} from 'react-icons/io'
-import {IoIosArrowForward} from 'react-icons/io'
-import {FaUserPlus} from 'react-icons/fa'
-import { Link, Route, Routes, Outlet } from 'react-router-dom'
-import AddUser from '../../../pages/AddUser' */}
+
 
 
 

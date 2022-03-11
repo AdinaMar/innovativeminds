@@ -1,0 +1,102 @@
+.building-wrapper {
+
+
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:rgba(255, 255, 255, 0.626);
+    font-size: 14px;
+    justify-content: center;
+    margin: auto;
+    width:90%;
+  
+    .find-users{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 40px;
+  label {
+    color: rgba(255, 255, 255, 0.781);
+    font-size: 25px;
+    font-weight: 600;
+  
+  }
+      input {
+        border-radius: 20px;
+        padding: 12px;
+        outline: none;
+        border: 1px solid $dark_green;
+        background-color:hsl(0, 11%, 86%);
+        margin-left: 15px;
+          }
+  
+      .add-user{
+        color:$dark_green;
+        font-size: 35px;
+        margin-left: 18px;
+        margin-top: 5px;
+  
+  }
+  }   
+   table {
+        
+       width:95%;
+        background-color:  rgba(8,69,69, 0.85);
+      border: 1px solid black;
+        width: 900px;
+        height: 200px;
+        border-radius: 20px;
+        color:#fff;
+      
+       tr {
+           
+          /*  border-bottom: 1px solid white;*/
+            line-height:40px;
+           
+        
+            
+        }
+      th {
+        margin:5px;
+        border-right: 1px solid black; 
+        border-bottom: 1px solid black;
+        padding-right: 15px;
+        
+        padding-left: 15px;
+    
+      }
+        
+      td {
+        margin:5px;
+        text-align: center;
+        border-bottom: 1px solid black;
+        border-right: 1px solid black; 
+        padding-right: 15px;
+        
+        padding-left: 15px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+  
+        
+        &:last-child {
+            border-right: none;
+           
+        }
+      
+      }
+  .icons {
+    
+    font-size: 25px;
+  color: white;
+  cursor: pointer;
+  
+  }
+  
+  }
+  
+  
+  
+}

@@ -31,9 +31,9 @@ const UserActivities = () => {
         <p>Users Management</p>
          </Link>
 
-            <div className="single-activity">
+           <Link to="/buildingManagement"  className="single-activity">
             <p>Building Management</p>
-            </div>
+            </Link>
 
             <div className="single-activity">
             <p>Office Management</p>
