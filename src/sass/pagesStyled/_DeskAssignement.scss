@@ -1,0 +1,89 @@
+.assignment-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    border: 3px solid $dark_green;
+    border-radius: 20px;
+    background-color:  rgba(8,69,69, 0.75);
+    color: white;
+    padding: 55px;
+    width:40%;
+  
+    .container-assignment {
+        width: 100%;
+        form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        width: 100%;
+        padding: 35px;
+
+        .selects{
+            .selected {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 20px;
+
+                label {
+                    color: rgba(255, 255, 255, 0.781);
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-bottom: 15px;
+                    
+                    }
+                      select {
+                        border-radius: 20px;
+                        padding: 8px;
+                        outline: none;
+                        border: 1px solid $dark_green;
+                        background-color:hsl(0, 11%, 86%);
+                        margin-left: 15px;
+                          }
+                    
+            }
+        }
+        .selectUser {
+            display: flex;
+            flex-direction: column;
+            
+            label {
+                color: rgba(255, 255, 255, 0.781);
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 15px;
+            }
+                input {
+                    border-radius: 20px;
+                        padding: 8px;
+                        outline: none;
+                        border: 1px solid $dark_green;
+                        background-color:hsl(0, 11%, 86%);
+                        margin-left: 15px;
+                
+        }
+    }
+button {
+    align-self: center;
+    width: 68%;
+     background-color:rgb(2, 138, 131, 0.7);
+            color: #fff;
+            cursor: pointer;
+            padding: 16px 35px;
+            margin-top: 40px;
+            margin-bottom:35px;
+            margin-left:auto;
+            margin-right: auto;
+            border-radius: 20px;
+            font-size: 20px;
+            border:2px solid $dark_green;
+            font-weight:700;
+ 
+            &:hover {
+                background-color:$dark_green;
+            }
+}
+}
+    }
+}

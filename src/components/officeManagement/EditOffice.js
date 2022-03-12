@@ -46,7 +46,8 @@ setOffice(response.data);
 
       const editOfficeDetails = async () => {
        
-        const newOffice = {name:name, floorNr:floor, building:buildingName, desks:totalDesks, usableDesks:usableDesks,officeAdministrator:adminOffice}
+        const newOffice = {name:name, floorNr:floor, building:buildingName, desks:totalDesks, usableDesks:usableDesks,officeAdministrator:adminOffice,
+        usedDesks: office.usedDesks, employees:office.employees}
           await editOffice(id,newOffice);
          navigate("/officeManagement")
       }

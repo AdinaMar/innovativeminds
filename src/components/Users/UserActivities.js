@@ -39,13 +39,13 @@ const UserActivities = () => {
             <p>Office Management</p>
             </Link>
 
-            <div className="single-activity">
+           <Link to="/officeStatus"  className="single-activity">
             <p>Office Status</p>
-            </div>
+            </Link>
 
-            <div className="single-activity">
-            <p>Desk Assigment</p>
-            </div>
+            <Link to="/deskAssignement" className="single-activity">
+            <p>Desk Assignement</p>
+            </Link>
 
             <div className="single-activity">
             <p>Remote work approval</p>
