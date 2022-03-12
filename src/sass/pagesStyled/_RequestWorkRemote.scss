@@ -1,0 +1,177 @@
+.requestRemote-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+   
+    color: white;
+    
+    .requestRemote-wrapper {
+        background-color: rgba(8, 69, 65, 0.74);
+       
+        height: 700px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 25px;
+    h1 {
+        font-family: Josefin Slab;
+            font-size: 60px;
+            font-weight: 400;
+            color: $white;
+            display: flex;
+            text-align: center;
+            margin: 10px;
+        margin-bottom: 25px;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+
+        .firstline{
+            display: inline-block;
+            grid-template-columns: 1fr 1fr;
+            grid-gap:200px;
+            margin-top:30px;
+            margin-bottom:20px;
+            margin-left:30px;
+            .procentage {
+                //display: flex;
+               // flex-direction: column;
+                margin-bottom:20px;
+              
+                label {
+                    margin-bottom:15px;
+                    
+                 font-family: Nokora;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 32px;
+                }
+            input {
+                border-radius: 20px;
+             padding:10px;
+             border: 1px solid grey;
+             background: white;
+             width: 300px;
+             outline: none;
+             margin-right:35px;
+                }
+            }
+
+            .month{
+                //display:grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap:120px;
+                margin-left:125px;
+            
+                    label {
+                        margin-right:10px;
+                        margin-bottom:15px;
+                        font-weight:500;
+                        color: white;
+                        font-family: Nokora;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 24px;
+                        line-height: 32px;
+                    }
+                    select {
+                        
+                        border-radius: 20px;
+                     padding:10px;
+                     border: 1px solid rgb(0, 0, 0);
+                     background: white;
+                     width: 300px;
+                     outline: none;
+                     margin-bottom:35px;
+                     font-family: Nokora;
+                         font-style: normal;
+                         font-weight: bold;
+                         font-size: 18px;
+                         line-height: 32px;
+            
+                     option {
+                         
+                         border-radius: 15px;
+                         margin-bottom:35px;
+                         color: grey;
+                         font-family: Nokora;
+                         font-style: normal;
+                         font-weight: bold;
+                         font-size: 18px;
+                         line-height: 32px;
+                     }
+                    }
+                
+            
+            }
+         
+        }
+            
+            .secondline{
+            // display:grid;
+            display: inline-block;
+             grid-template-columns: 1fr 1fr;
+             grid-gap:120px;
+             margin-left:40px;
+             
+             .reason {
+              //  display: flex;
+                flex-direction: column;
+                margin-top:20px;
+                
+                label {
+                    margin-bottom:15px;
+                
+                     font-family: Nokora;
+                    font-style: normal;
+                    font-weight: bold;
+                     font-size: 24px;
+                    line-height: 32px;
+                 }
+                 input {
+                    margin-left:15px;
+                 border-radius: 20px;
+                    padding:30px;
+                    border: 1px solid grey;
+                     background: white;
+                     width: 300px;
+                    outline: none;
+                     margin-bottom:35px;
+                    }
+                    }
+         
+                }
+    
+   
+    
+   
+            button {
+            align-self: center;
+            width: 30%;
+            background-color:rgb(2, 138, 131, 0.7);
+               color: #fff;
+               cursor: pointer;
+               padding: 16px 40px;
+               margin-top: 40px;
+               margin-bottom:35px;
+               border-radius: 20px;
+               font-size: 25px;
+               border:2px solid $dark_green;
+               font-weight:700;
+    
+               &:hover {
+                   background-color:$dark_green;
+               }
+            }
+    
+    
+        }
+    }
+}

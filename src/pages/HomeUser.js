@@ -16,6 +16,8 @@ import EditOffice from '../components/officeManagement/EditOffice';
 import OfficeStatus from '../components/officeStatus/OfficeStatus';
 import OfficeInfo from '../components/officeStatus/OfficeInfo';
 import DeskAssignement from '../components/deskAssignement/DeskAssignement';
+import RequestWorkRemote from '../components/workRemote/RequestWorkRemote';
+
 
 const HomeUser = (users, setUsers) => {
   const [isActive, setIsActive] = useState(false);
@@ -41,11 +43,13 @@ const HomeUser = (users, setUsers) => {
       ( <AiOutlineClose className="close-menu" onClick={ () => setIsActive(!isActive)}/>) 
     )} 
   
-
+ 
 
 <Routes>
 {/*<Route exact path="/" element={<UserCard/>} />*/}
-  
+<Route path="workRemote/*" element={<RequestWorkRemote/>} />  
+
+
 <Route path="UsersManagement/*" element={<UsersManagement/>} />
 <Route exact path="/addUser" element={<AddUser/>} />
 <Route exact path="/editUser/:id" element={<EditUser />} />

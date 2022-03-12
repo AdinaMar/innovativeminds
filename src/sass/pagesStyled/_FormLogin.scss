@@ -32,23 +32,24 @@ align-items: flex-end;
 
     .overlay{
         position: absolute;
-        top:250px;
+        top:300px;
       
-        right: 775px;
+        right: 800px;
      
-        width:50%;
-        height:18%;
+        width:60%;
+        height:23%;
         background-color: rgba(8, 69, 65, 0.74);
         border-radius: 50px;
         border-color: black;
        &:hover {
         width:60%;
-        height:22%;
+        height:23%;
         transition: all 500ms;
        }
 
         h2{
-            font-size: 45px;
+          font-family: Josefin Slab;
+            font-size: 60px;
             font-weight: 400;
             color: $white;
             display: flex;
@@ -66,8 +67,10 @@ align-items: flex-end;
 /*}*/
 
 .form-container {
+  top: 90px;
+  left: 100px;
   background-color: rgba(8, 69, 65, 0.74);
-    width:100%;
+    width:550px;
     height: 750px;
     border-radius: 20px;
     
@@ -78,6 +81,13 @@ align-items: flex-end;
     position: relative;
     h1 {
         @include titles;
+        font-family: Josefin Slab;
+       
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 164px;
+        text-align: center;
+        color: #FFFFFF;
         display: flex;
         text-align: center;
         justify-content: center;
@@ -88,7 +98,8 @@ align-items: flex-end;
     .form-inputs{
         width: 100%;
         height:480px;
-        
+        top:230px;
+        margin-left:0px;
         position: absolute;
         
         display: flex;
@@ -103,22 +114,31 @@ align-items: flex-end;
 
 
      p{
-        font-size: 12px;
+        font-size: 20px;
         margin-top: 10px;
         color: #f00e0e;
      }
      label{
          margin-bottom:10px;
-         font-size: 18px;
+         font-size: 24px;
          font-weight:500;
          color: white;
+         font-size: 24px;
+         font-weight:500;
+      
+         font-family: Nokora;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 32px;
      }
      input {
+         font-size: 20px;
          border-radius: 20px;
          padding:12px;
          border: 1px solid grey;
          background: white;
-         width: 300px;
+         width: 350px;
          outline: none;
      &:active, &:focus
     {
@@ -127,9 +147,10 @@ align-items: flex-end;
  }
       
  .input-btn {
-    width: 30%;
-    height: 45px;
-    margin-top: 10px;
+  width: 40%;
+  height: 60px;
+  
+  margin-top: 30px;
     border-radius: 20px;
     background: linear-gradient(
       90deg,
@@ -141,6 +162,15 @@ align-items: flex-end;
     color: #fff;
     font-size: 18px;
     font-weight: 500;
+
+    font-family: Josefin Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+
+    color: #FFFFFF;
   
   
   &:hover {

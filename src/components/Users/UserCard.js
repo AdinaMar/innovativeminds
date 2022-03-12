@@ -29,7 +29,7 @@ const UserCard = () => {
         <small>Seat &#8470;: 6</small>
         </div>
 
-        <button>Work remote</button>
+        <Link to="/workRemote" className="single-activity">  <button>Work remote</button> </Link>
     </div>
     
     
