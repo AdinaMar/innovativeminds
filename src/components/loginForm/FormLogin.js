@@ -4,7 +4,13 @@ import Typical from 'react-typical';
 import useForm from './useForm';
 import validate from './validateInfo'
 
+
+
 const FormLogin = ({submitForm}) => {
+
+
+
+
 
     const {handleChange, values, handleSubmit, errors} = useForm(submitForm,validate)
   return (
