@@ -10,7 +10,7 @@
        display: grid;
        grid-template-columns: 1fr 1fr;
        align-items: center;
-   justify-content: center;
+      justify-content: center;
       grid-gap: 120px;
       border: 3px solid $dark_green;
      border-radius: 20px;
@@ -29,6 +29,12 @@
         border-radius:20px;
         background-color:rgb(2, 138, 131, 0.7);
         cursor:pointer;
+        img {
+          width:120px;
+          height:120px;
+          
+          float:right;
+        }
         h2,h3,h4 {
             margin-bottom: 15px;
         }

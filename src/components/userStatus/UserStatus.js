@@ -1,30 +1,27 @@
 import React, {useState, useEffect} from 'react'
-import { getOffices } from '../../api/api'
+import { getUsers } from '../../api/api'
 import {Pagination} from 'react-custom-pagination'
 import { Link } from 'react-router-dom'
-import OfficeInfo from './OfficeInfo'
-import officestatushere from '../../images/office.jpg'
+import userIcon from '../../images/usersstatus.png'
+import Remote from './Remote'
+import Status from './Status'
 
-
-
-
-
-
-const OfficeStatus = () => {
+const UserStatus = () => {
+    
     const[currentPage, setCurrentPage] = useState(1)
     const[postsPerPage] = useState(4);
 
     const[searchName, setSearchName] = useState('');
 
 
-    const [offices, setOffices] = useState([]);
+    const [users, setUsers] = useState([]);
     useEffect(() => {
-    getAllOffices();
+    getAllUsers();
     
     }, [])
-        const getAllOffices = async () => {
-         const response =  await getOffices();
-     setOffices(response.data)
+        const getAllUsers = async () => {
+         const response =  await getUsers();
+     setUsers(response.data)
     
     
         }
@@ -32,7 +29,7 @@ const OfficeStatus = () => {
 
         const indexOfLastPost = currentPage * postsPerPage;
       const indexOfFirstPost = indexOfLastPost - postsPerPage;
-      const currentPosts = offices.slice(indexOfFirstPost, indexOfLastPost)
+      const currentPosts = users.slice(indexOfFirstPost, indexOfLastPost)
       const paginate = (number) => {
         setCurrentPage(number)
       }
@@ -41,12 +38,12 @@ const OfficeStatus = () => {
 
    
 
-    <div className="office-wrapper">
+    <div className="office-wrapperuser">
     <div className='inputs'>
-    <label htmlFor='findUser'>Find Office: </label>
+    <label htmlFor='findUser'>Find User: </label>
     <input type="text" name="findUser" onChange={(event) => {setSearchName(event.target.value)}}/>
     </div>
-    <div className="office-container">
+    <div className="office-containeruser">
 
 
     {
@@ -56,21 +53,25 @@ const OfficeStatus = () => {
           } else if (val.name.toLowerCase().includes(searchName.toLowerCase())) {
           return val
         }
-    }).map(office => (
-       <Link to={`/officeInfo/${office.id}`} className="office-card"> 
-       <img src={officestatushere} alt="office"></img>
-        <h2>{office.name}</h2>
-        <h4>Floor Nr: {office.floorNr}</h4>
-        <h3>Building: {office.building}</h3>
-        <h3>Office Admin: {office.officeAdministrator}</h3>
-    </Link>
+
+    }).map(user => (
+       <div className="office-carduser"> 
+       <img src={userIcon} alt="user profile"></img>
+        <h2>{user.name}  <Status active={user.status} /></h2>
+       
+        <h3>Works at: {user.building}, {user.office}</h3>
+        
+        <h3>Remote Work: <Remote active= {user.remote} />
+         </h3>
+        
+    </div>
   ))
     }
     
 
    </div>
    <div className="pagination">
-          <Pagination  totalPosts = {offices.length}
+          <Pagination  totalPosts = {users.length}
            postsPerPage = {postsPerPage}
            paginate = {paginate} 
            selectColor = "#008B8B"
@@ -83,5 +84,6 @@ const OfficeStatus = () => {
     </>
   )
 }
+ 
 
-export default OfficeStatus
+export default UserStatus

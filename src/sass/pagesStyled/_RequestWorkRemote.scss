@@ -58,7 +58,7 @@
              padding:10px;
              border: 1px solid grey;
              background: white;
-             width: 300px;
+             width: 150px;
              outline: none;
              margin-right:35px;
                 }
@@ -122,7 +122,7 @@
              margin-left:40px;
              
              .reason {
-              //  display: flex;
+               display: flex;
                 flex-direction: column;
                 margin-top:20px;
                 
@@ -135,15 +135,16 @@
                      font-size: 24px;
                     line-height: 32px;
                  }
-                 input {
+                 textarea {
                     margin-left:15px;
-                 border-radius: 20px;
+                   border-radius: 20px;
                     padding:30px;
                     border: 1px solid grey;
                      background: white;
-                     width: 300px;
+                     width: 95%;
                     outline: none;
                      margin-bottom:35px;
+                     height:150px;
                     }
                     }
          

@@ -22,13 +22,14 @@ const RequestWorkRemote = () => {
 
             <div className="firstline">
                 <div className="procentage">
-                <label htmlFor="nrprocentage">Procentage of remote work time </label>
-
-                {/* <input type="text" name="nrprocentage" value={nrprocentage} onChange={handleChange}/>*/}
+                <label htmlFor="nrprocentage">Percentage of remote work time: </label>
                 <input type="text" name="nrprocentage"/>
+</div>
+                {/* <input type="text" name="nrprocentage" value={nrprocentage} onChange={handleChange}/>*/}
+               {/* 
 
-                 </div>
-                <div className='month'>
+                 */}  
+              {/*  <div className='month'>
             
 
                 <label htmlFor="month"> for month</label>
@@ -50,7 +51,7 @@ const RequestWorkRemote = () => {
                     <option value="December">December</option>
                     </select>*/}
 
-                    <select name="month" >
+                    {/*<select name="month" >
                         
                         <option value="">Select</option>
                         <option value="January">January</option>
@@ -65,9 +66,7 @@ const RequestWorkRemote = () => {
                         <option value="October">October</option>
                         <option value="November">November</option>
                         <option value="December">December</option>
-                        </select>
-
-                </div>
+                        </select>*/}
 
 
              </div>
@@ -76,11 +75,11 @@ const RequestWorkRemote = () => {
                  
                      <div className="reason">
                  
-                        <label htmlFor="reason">Reason to make this request</label>
+                        <label htmlFor="reason">Reason of request:</label>
            
                     
                         {/*<input type="text" name="reason" value={reason} onChange={handleChange} />*/}
-                        <input type="text" name="reason" />
+                        <textarea> </textarea> 
                     
                     </div>
 

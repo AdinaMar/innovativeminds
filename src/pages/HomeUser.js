@@ -17,6 +17,7 @@ import OfficeStatus from '../components/officeStatus/OfficeStatus';
 import OfficeInfo from '../components/officeStatus/OfficeInfo';
 import DeskAssignement from '../components/deskAssignement/DeskAssignement';
 import RequestWorkRemote from '../components/workRemote/RequestWorkRemote';
+import UserStatus from '../components/userStatus/UserStatus';
 
 
 const HomeUser = (users, setUsers) => {
@@ -61,7 +62,8 @@ const HomeUser = (users, setUsers) => {
 <Route exact path="/editOffice/:id" element={<EditOffice />} />
 <Route exact path="/officeStatus" element={<OfficeStatus />} />
 <Route exact path="/officeInfo/:id" element={<OfficeInfo />} />
-<Route exact path="deskAssignement" element={<DeskAssignement />} />
+<Route exact path="/deskAssignement" element={<DeskAssignement />} />
+<Route exact path="/userStatus" element={<UserStatus />} />
 </Routes>
 </div>
  </BrowserRouter>
