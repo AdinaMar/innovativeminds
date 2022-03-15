@@ -6,7 +6,7 @@ import {AiOutlineUsergroupDelete} from 'react-icons/ai'
 import {FiEdit} from 'react-icons/fi'
 import {Link} from 'react-router-dom'
 import {MdAddBusiness} from 'react-icons/md'
-
+import axios from 'axios'
 
 const BuildingManagement = () => {
 
@@ -25,10 +25,31 @@ const BuildingManagement = () => {
     
         }
 
-        const deleteBuildingData = async (id) => {
+
+        const deleteBuildingData = async (buildingId) => {
+            /* await deleteBuilding(id); */
+            axios({
+              method: 'delete',
+              headers:{'Content-Type': 'application/json; charset=utf-8'},
+              url: "http://localhost:8080/management/building", 
+              data: null,
+              params: {
+                id: buildingId
+              }    
+            })
+            getBuildings()  
+          }
+
+
+
+
+
+
+
+      {/*  const deleteBuildingData = async (id) => {
             await deleteBuilding(id)
             getAllBuildings();
-        }
+        } */}
 
     return( 
         <>
@@ -63,11 +84,11 @@ const BuildingManagement = () => {
         }
       }).map(building => (
               <tr>
-                  <td>{building.name}</td>
+                  <td>{building.buildingName}</td>
                   <td>{building.address}</td>
-                  <td>{building.floors}</td>
+                  <td>{building.floorCount}</td>
                   
-                  <td> <Link to={`/editBuilding/${building.id}`} > <FiEdit className="icons"/> </Link>   <AiOutlineUsergroupDelete className="icons" onClick={()=>deleteBuildingData(building.id)}/></td>
+                  <td> <Link to={`/editBuilding/${building.buildingId}`} > <FiEdit className="icons"/> </Link>   <AiOutlineUsergroupDelete className="icons" onClick={()=>deleteBuildingData(building.buildingId)}/></td>
               </tr>
           ))
       }

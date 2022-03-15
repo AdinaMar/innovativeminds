@@ -47,7 +47,7 @@ const UserActivities = () => {
             <p>Desk Assignement</p>
             </Link>
 
-            <Link to="/remoteWork" className="single-activity">
+            <Link to="/RemoteApproval" className="single-activity">
             <p>Remote work approval</p>
             </Link>
 

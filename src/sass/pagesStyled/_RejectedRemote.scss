@@ -1,0 +1,33 @@
+.text {
+    label{
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: red;
+    } 
+    textarea {
+        border-radius: 20px;
+        margin-top:20px;
+        padding:10px;
+
+        
+    }
+    button {
+        float: right;
+        width: 28%;
+        background-color: rgba(8, 69, 65, 0.74);
+               color: #fff;
+               cursor: pointer;
+               padding: 12px 25px;
+              
+            
+               
+               border-radius: 20px;
+               font-size: 16px;
+               border:2px solid $dark_green;
+               font-weight:700;
+    
+               &:hover {
+                   background-color:$dark_green;
+               }
+    }
+}

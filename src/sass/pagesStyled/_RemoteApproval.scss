@@ -1,0 +1,126 @@
+.office-wrapperapproval {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+ 
+    .office-containerapproval{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    justify-content: center;
+       grid-gap: 75px;
+       border: 3px solid $dark_green;
+      border-radius: 20px;
+       width: 60%;
+       padding: 60px;
+       background-color:  rgba(8,69,69, 0.75);
+       
+       color:white;
+ 
+ 
+       .office-cardapproval{
+         text-decoration: none;
+         color:white;
+         border: 2px solid $dark_green;
+         padding: 25px;
+         border-radius:20px;
+         height: 100%;
+         background-color:rgb(2, 138, 131, 0.7);
+         cursor:pointer;
+
+         .profilepic{
+             display: flex;
+             flex-direction: row;
+             justify-content:center ;
+             align-items: center;
+             margin-bottom:10px;
+
+         img {
+            
+            width: 100px;
+            height: 100px;
+           
+        
+        }
+    }      
+        .icon {
+            margin-left: 20px;
+        }
+        
+        
+         h2,h3,h4 {
+             margin-bottom: 15px;
+
+         }
+         p{
+             margin-bottom: 20px;
+         }
+         .buttons{
+           
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top:30px;
+          
+             button {
+            
+                .link{
+                    text-decoration: none;
+                    color:White;
+                 
+                 }
+           
+            width: 38%;
+     background-color: rgba(8, 69, 65, 0.74);
+            color: #fff;
+            cursor: pointer;
+            padding: 12px 25px;
+           
+         
+            
+            border-radius: 20px;
+            font-size: 14px;
+            border:2px solid $dark_green;
+            font-weight:700;
+ 
+            &:hover {
+                background-color:$dark_green;
+            }
+        }
+        }
+       }
+       
+    }
+ 
+ 
+ .inputs {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+   margin-bottom: 30px;
+ label {
+ color: rgba(255, 255, 255, 0.781);
+ font-size: 25px;
+ font-weight: 600;
+ 
+ }
+   input {
+     border-radius: 20px;
+     padding: 12px;
+     outline: none;
+     border: 1px solid $dark_green;
+     background-color:hsl(0, 11%, 86%);
+     margin-left: 15px;
+       }
+ }
+ 
+ .pagination {
+   margin-top:10px;
+ }
+ }
+

@@ -18,6 +18,8 @@ import OfficeInfo from '../components/officeStatus/OfficeInfo';
 import DeskAssignement from '../components/deskAssignement/DeskAssignement';
 import RequestWorkRemote from '../components/workRemote/RequestWorkRemote';
 import UserStatus from '../components/userStatus/UserStatus';
+import RemoteApproval from '../components/workRemote/RemoteApproval';
+import RejectedRemote from '../components/workRemote/RejectedRemote';
 
 
 const HomeUser = (users, setUsers) => {
@@ -64,6 +66,8 @@ const HomeUser = (users, setUsers) => {
 <Route exact path="/officeInfo/:id" element={<OfficeInfo />} />
 <Route exact path="/deskAssignement" element={<DeskAssignement />} />
 <Route exact path="/userStatus" element={<UserStatus />} />
+<Route exact path="/RemoteApproval" element={<RemoteApproval />} />
+<Route exact path="/RejectedRemote/:id" element={<RejectedRemote />} />
 </Routes>
 </div>
  </BrowserRouter>
