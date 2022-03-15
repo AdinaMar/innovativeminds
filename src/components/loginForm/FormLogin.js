@@ -3,6 +3,7 @@ import background from "../../images/officeBackground.jpg";
 import Typical from 'react-typical';
 import useForm from './useForm';
 import validate from './validateInfo'
+import { Link } from 'react-router-dom';
 
 const FormLogin = ({submitForm}) => {
 
@@ -38,7 +39,8 @@ const FormLogin = ({submitForm}) => {
                 <input type="password" className="form-input" name="password" placeholder='Enter Your Password' id='password' value={values.password} onChange={handleChange}/>
                 {errors.password && <p>{errors.password}</p>}
             </div>
-            <button className="input-btn" type="submit">LOGIN</button>
+            
+          <button className="input-btn" type="submit">LOGIN</button>     
             </div>
         </form>
     </div>

@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const url = "http://localhost:8080/management/admin/user/status?q";
+ const url = "http://localhost:3006/users" /*"http://localhost:8080/management/admin/user/status?q"; */
 
 export const getUsers = async (id) => {
     id = id || '';

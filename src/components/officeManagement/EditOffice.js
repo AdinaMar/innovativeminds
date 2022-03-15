@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { editOffice, getAllOffices} from '../../api/api'
 import {  useNavigate, useParams } from 'react-router-dom'
 import { useState } from 'react'
-
+import { getBuildings } from '../../api/api'
 
 
 const initialValues = {
@@ -17,7 +17,7 @@ const initialValues = {
 
 const EditOffice = () => {
 
-
+const[buildings, setBuildings] = useState([]);
     const[office, setOffice] = useState(initialValues)
     const{name, buildingName, floor, totalDesks, usableDesks, adminOffice} = office
     const {id} = useParams();
@@ -42,7 +42,10 @@ setOffice(response.data);
         })
       }
 
-      
+      const getBuilding = async () => {
+        const response = await getBuildings();
+        setBuildings(response.data)
+      }
 
       const editOfficeDetails = async () => {
         const newOffice = {
@@ -103,7 +106,13 @@ setOffice(response.data);
      </div>
      <div className='firstlastname'>
      <label htmlFor="buildingName">Building:</label>
-     <input type="text" name="buildingName" value={buildingName} onChange={handleChange}/>
+     <select type="text" name="name" value={name} onChange={handleChange}>
+       {
+         buildings.map(building => (
+           <option value={building.buildingId}>{building.buildingName}</option>
+         ))
+       }
+        </select>
      </div>
      </div>
 <div className="email-password">
