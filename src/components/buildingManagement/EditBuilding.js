@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { editBuilding, getBuildings} from '../../api/api'
 import {  useNavigate, useParams } from 'react-router-dom'
 import { useState } from 'react'
-
+import axios from "axios";
 
 
 
@@ -44,11 +44,16 @@ setBuilding(response.data);
       
 
       const editBuildingDetails = async () => {
-       
-        const newBuilding = {name:buildingName, address:address, floors:floors}
-          await editBuilding(id,newBuilding);
+     {/*  axios ({
+         method: "put",
+         headers: {"Content-Type": "application/json; charset=utf-8"},
+         url:"http://localhost:8080/management/building",
+         data: newBuilding
+       }) */}
+        const newBuilding = {buildingId: id, buildingName:buildingName, address:address, floorCount:floors}
+          await editBuilding(newBuilding);
          navigate("/BuildingManagement")
-      }
+      } 
 
       const handleSubmit = (e) => {
         e.preventDefault();

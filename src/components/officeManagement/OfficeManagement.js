@@ -3,9 +3,9 @@ import {AiOutlineUsergroupDelete} from 'react-icons/ai'
 import {FiEdit} from 'react-icons/fi'
 import {Link} from 'react-router-dom'
 import {MdAddBusiness} from 'react-icons/md'
-import { getOffices, deleteOffice } from '../../api/api'
+import { getAllOffices, deleteOffice } from '../../api/api'
 
-
+import axios from 'axios'
 
 const OfficeManagement = () => {
 
@@ -14,20 +14,33 @@ const[searchName, setSearchName] = useState('');
 
     const [offices, setOffices] = useState([]);
     useEffect(() => {
-    getAllOffices();
+    getOffices();
     
     }, [])
-        const getAllOffices = async () => {
-         const response =  await getOffices();
+        const getOffices = async () => {
+         const response =  await getAllOffices();
      setOffices(response.data)
     
     
         }
 
-        const deleteOfficeData = async (id) => {
+        {/*const deleteOfficeData = async (id) => {
             await deleteOffice(id)
             getAllOffices();
-        }
+        } */ }
+        const deleteOfficeData = async (officeId) => {
+            /* await deleteBuilding(id); */
+            axios({
+              method: 'delete',
+              headers:{'Content-Type': 'application/json; charset=utf-8'},
+              url: "http://localhost:8080/management/office", 
+              data: null,
+              params: {
+                id: officeId
+              }    
+            })
+            getAllOffices()  
+          }
   return (
     <>
     <div className="building-wrapper">
@@ -58,19 +71,19 @@ const[searchName, setSearchName] = useState('');
            offices.filter((val) => {
               if(searchName == "") {
                 return val
-              } else if (val.name.toLowerCase().includes(searchName.toLowerCase())) {
+              } else if (val.officeName.toLowerCase().includes(searchName.toLowerCase())) {
               return val
             }
           }).map(office => (
                   <tr>
-                      <td>{office.name}</td>
-                      <td>{office.building}</td>
-                      <td>{office.floorNr}</td>
-                      <td>{office.desks}</td>
-                      <td>{office.usableDesks}</td>
-                      <td>{office.officeAdministrator}</td>
+                      <td>{office.officeName}</td>
+                      <td>{office.building.buildingName}</td>
+                      <td>{office.floorNumber}</td>
+                      <td>{office.deskCount}</td>
+                      <td>{office.usableDeskCount}</td>
+                      <td>{office.officeAdmin.fristName}</td>
                       
-                      <td> <Link to={`/editOffice/${office.id}`} > <FiEdit className="icons"/> </Link>   <AiOutlineUsergroupDelete className="icons" onClick={()=>deleteOfficeData(office.id)}/></td>
+                      <td> <Link to={`/editOffice/${office.officeId}`} > <FiEdit className="icons"/> </Link>   <AiOutlineUsergroupDelete className="icons" onClick={()=>deleteOfficeData(office.officeId)}/></td>
                   </tr>
               ))
           }

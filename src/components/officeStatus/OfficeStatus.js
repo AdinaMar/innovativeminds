@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { getOffices } from '../../api/api'
+import { getAllOffices } from '../../api/api'
 import {Pagination} from 'react-custom-pagination'
 import { Link } from 'react-router-dom'
 import OfficeInfo from './OfficeInfo'
@@ -23,7 +23,7 @@ const OfficeStatus = () => {
     
     }, [])
         const getAllOffices = async () => {
-         const response =  await getOffices();
+         const response =  await getAllOffices();
      setOffices(response.data)
     
     

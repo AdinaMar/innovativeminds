@@ -37,7 +37,7 @@ const BuildingManagement = () => {
                 id: buildingId
               }    
             })
-            getBuildings()  
+            getAllBuildings()  
           }
 
 
@@ -79,7 +79,7 @@ const BuildingManagement = () => {
        buildings.filter((val) => {
           if(searchName == "") {
             return val
-          } else if (val.name.toLowerCase().includes(searchName.toLowerCase())) {
+          } else if (val.buildingName.toLowerCase().includes(searchName.toLowerCase())) {
           return val
         }
       }).map(building => (

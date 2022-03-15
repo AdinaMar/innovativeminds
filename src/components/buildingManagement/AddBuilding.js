@@ -35,7 +35,7 @@ const AddBuilding = () => {
 
       const addBuildingDetails = async () => {
       
-        const newBuilding = {name:buildingName, address: address, floors:floors}
+        const newBuilding = {buildingName:buildingName, address: address, floorCount:floors}
           await addBuilding(newBuilding);
           navigate("/BuildingManagement")
       }

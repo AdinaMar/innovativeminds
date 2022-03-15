@@ -1,12 +1,36 @@
 import React from 'react'
+import { addRequest } from '../../api/api'
+import { useState } from 'react'
 
 
+const initialValues = {
+    percentage: "",
+    message: ""
+}
 
 const RequestWorkRemote = () => {
 
  
-        
+        const[request, setRequest] = useState(initialValues);
 
+        const handleChange = e => {
+         
+            const {name, value} = e.target
+            setRequest({
+              ...request,
+              [name]: value
+            })
+          }
+    const{percentage, message} = request;
+    const addRequestDetails = async () => {
+        const newRequest={percentage: percentage, status: false,  motivation: message, responseMotivation: ""}
+        await addRequest(newRequest);
+    }
+
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        addRequestDetails();
+    }
 
     
   
@@ -17,13 +41,13 @@ const RequestWorkRemote = () => {
             <div className='requestRemote-wrapper'>
             <h1>Request to work remote</h1>
            
-           <form>
+           <form onSubmit={handleSubmit}>
             {/*<form onSubmit={handleSubmit}>*/}
 
             <div className="firstline">
                 <div className="procentage">
                 <label htmlFor="nrprocentage">Percentage of remote work time: </label>
-                <input type="text" name="nrprocentage"/>
+                <input type="text" name="nrprocentage" value={percentage} onChange={handleChange}/>
 </div>
                 {/* <input type="text" name="nrprocentage" value={nrprocentage} onChange={handleChange}/>*/}
                {/* 
@@ -79,7 +103,7 @@ const RequestWorkRemote = () => {
            
                     
                         {/*<input type="text" name="reason" value={reason} onChange={handleChange} />*/}
-                        <textarea> </textarea> 
+                        <textarea value={message} onChange={handleChange}> </textarea> 
                     
                     </div>
 

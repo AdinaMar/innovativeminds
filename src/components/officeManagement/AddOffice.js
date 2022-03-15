@@ -37,11 +37,41 @@ const AddOffice = () => {
           
     
           const addOfficeDetails = async () => {
-          
-            const newOffice = {name:name, floorNr:floor, building: buildingName,desks:totalDesks, usableDesks:usableDesks, officeAdministrator: adminOffice, usedDesks: 0, employees: []}
-              await addOffice(newOffice);
-              navigate("/officeManagement")
-          }
+            const newOffice = {
+              officeName: name,
+              floorNumber: floor,
+              deskCount: totalDesks,
+              usableDeskCount: usableDesks,
+              occupiedDeskCount: 0,
+              officeAdmin: {
+                userId: 2,
+                fristName: adminOffice,
+                lastName: '',
+                email: '',
+                password: '',
+                dateOfBirth: '',
+                nationality: '',
+                accountEnabled: true,
+                remoteWorkPercentage: 72,
+                authority: {
+                  authorityId: 2,
+                  role: 'Office Admin'
+                }
+              },
+              building: {
+                buildingId: 2,
+                buildingName: buildingName,
+                floorCount: 23,
+                address: 'Strada Principala 127'
+              },    
+              
+             
+              usedDesks: 0,
+              desks: [],
+            };
+            await addOffice(newOffice);
+            navigate('/officeManagement');
+          };
     
           const handleSubmit = (e) => {
             e.preventDefault();

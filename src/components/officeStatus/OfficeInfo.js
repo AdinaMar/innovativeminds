@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { getOffices} from '../../api/api'
+import { getAllOffices} from '../../api/api'
 import {   Link, useParams } from 'react-router-dom'
 import { useState } from 'react'
 
@@ -17,7 +17,7 @@ const OfficeInfo = () => {
     }, []);
 
     const loadOfficeData = async () => {
-const response = await getOffices(id);
+const response = await getAllOffices(id);
 setOffice(response.data);
     }
 
