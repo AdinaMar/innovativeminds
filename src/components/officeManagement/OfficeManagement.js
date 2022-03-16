@@ -30,16 +30,8 @@ const[searchName, setSearchName] = useState('');
         } */ }
         const deleteOfficeData = async (officeId) => {
             /* await deleteBuilding(id); */
-            axios({
-              method: 'delete',
-              headers:{'Content-Type': 'application/json; charset=utf-8'},
-              url: "http://localhost:8080/management/office", 
-              data: null,
-              params: {
-                id: officeId
-              }    
-            })
-            getAllOffices()  
+          await deleteOffice(id);
+            getAllOffices();
           }
   return (
     <>

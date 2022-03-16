@@ -3,7 +3,7 @@ import { getUsers,editUser } from '../../api/api'
 import {Pagination} from 'react-custom-pagination'
 import { Link } from 'react-router-dom'
 import userIcon from '../../images/usersstatus.png'
-import { getRequests, editRequest } from '../../api/api'
+import { getRemote, editRemote } from '../../api/api'
 
 
 
@@ -26,7 +26,7 @@ const RemoteApproval = () => {
     
     }, [])
         const getAllRequests = async () => {
-         const response =  await getRequests();
+         const response =  await getRemote();
      setRequests(response.data)
     
     

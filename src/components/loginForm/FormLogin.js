@@ -3,7 +3,7 @@ import background from "../../images/officeBackground.jpg";
 import Typical from 'react-typical';
 import useForm from './useForm';
 import validate from './validateInfo'
-import { Link } from 'react-router-dom';
+
 
 const FormLogin = ({submitForm}) => {
 

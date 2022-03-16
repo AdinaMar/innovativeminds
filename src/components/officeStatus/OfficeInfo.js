@@ -29,12 +29,12 @@ setOffice(response.data);
     <div className="infos">
 
 <h2>{office.name}</h2>
-<p>Building: {office.building}</p>
-<p>Floor Nr: {office.floorNr}</p>
-<p>Office Admin: {office.officeAdministrator}</p>
-<p>Total desks: { office.desks}</p>
-<p>Free desks: {office.usableDesks - office.usedDesks}</p>
-<p>Usable desks: {office.usableDesks}</p>
+<p>Building: {office.building.buildingName}</p>
+<p>Floor Nr: {office.floorNumber}</p>
+<p>Office Admin: {office.officeAdmin.fristName} {office.officeAdmin.lastName}</p>
+<p>Total desks: { office.deskCount}</p>
+<p>Free desks: {office.usableDeskCount - office.occupiedDeskCount}</p>
+<p>Usable desks: {office.usableDeskCount}</p>
     </div>
 
     <div className="list-users">

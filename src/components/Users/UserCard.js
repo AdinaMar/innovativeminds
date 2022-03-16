@@ -4,7 +4,7 @@ import user from '../../images/userIcon.jpg';
 import photo from '../../images/camera.png';
 import UserActivities from './UserActivities';
 import { Link } from 'react-router-dom';
-import $ from 'jquery'; 
+
 
 const UserCard = () => {
 

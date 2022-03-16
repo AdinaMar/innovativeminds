@@ -1,6 +1,6 @@
 import axios from "axios"
 
- const url = "http://localhost:3006/users" /*"http://localhost:8080/management/admin/user/status?q"; */
+ const url = "http://localhost:8080/management/admin/user/status?q";
 
 export const getUsers = async (id) => {
     id = id || '';
@@ -57,55 +57,51 @@ export const addBuilding = async (building) => {
         }
     */ }
 
-const urlOffice = 'http://localhost:8080/management/office'
+const urlOffice = 'http://localhost:3006/offices'
 
-const offices = 'http://localhost:8080/management/office/all'
+
 export const getAllOffices = async (id) => {
     id = id || '';
-    return await axios.get(`${offices}/${id}`)
+    return await axios.get(`${urlOffice}/${id}`)
 }
 
-export const getOneOffice = async (id) => {
-    id = id || '';
-    return await axios.get(`${offices}/${id}`)
-}
+
 export const addOffice = async(office) => {
     return await axios.post(urlOffice, office)
 }
 
-export const editOffice = async(office) => {
-    return await axios.put(`${urlOffice}`, office)
+export const editOffice = async(office, id) => {
+    return await axios.put(`${urlOffice}/${id}`, office)
 }
  
-
+export const deleteOffice = async(id) => {
+    return await axios.delete(`${urlOffice}/${id}`)
+}
 
 //////////////////////////////////////
-const urlBuildings = 'http://localhost:8080/management/building'
 
-const buildings = 'http://localhost:8080/management/building/all'
+
+const buildings = 'http://localhost:3006/buildings'
 
 export const getBuildings = async (id) => {
     id = id || '';
     return await axios.get(`${buildings}/${id}`)
 }
 
-export const getOneBuilding = async (id) => {
-    id = id || '';
-    return await axios.get(`${buildings}/${id}`)
-}
-
-
 
 export const addBuilding = async(building) => {
-    return await axios.post(urlBuildings, building)
+    return await axios.post(`${buildings}`, building)
 }
 
-export const editBuilding = async(building) => {
-    return await axios.put(`${urlBuildings}`, building)
+export const editBuilding = async(id, building) => {
+    return await axios.put(`${buildings}/${id}`, building)
 }
 
+export const deleteBuilding = async(id) => {
+    return await axios.delete(`${buildings}/${id}`)
+}
 ////////////////////
-const urlRequests = 'http://localhost:8080/management/remote'
+const urlRequests = 'http://localhost:3006/management/remote'
 
 export const getRequests =  async (id) => {
     id = id || '';
@@ -118,4 +114,37 @@ export const addRequest = async(request) => {
 
 export const editRequest = async(request) => {
     return await axios.put(`${urlRequests}`, request)
+}
+
+
+const urlRemote = 'http://localhost:3006/remote'
+
+export const getRemote =  async (id) => {
+    id = id || '';
+    return await axios.get(`${urlRemote}/${id}`)
+}
+
+export const addRemote = async(remote) => {
+    return await axios.post(urlRemote, remote)
+}
+
+export const editRemote = async(remote) => {
+    return await axios.put(`${urlRemote}`, remote)
+}
+
+
+
+const urlDesk = 'http://localhost:3006/deskRequest'
+
+export const getDesk =  async (id) => {
+    id = id || '';
+    return await axios.get(`${urlDesk}/${id}`)
+}
+
+export const addDesk = async(desk) => {
+    return await axios.post(urlDesk, remote)
+}
+
+export const editDesk = async(desk) => {
+    return await axios.put(`${urlDesk}`, remote)
 }

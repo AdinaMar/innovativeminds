@@ -1,5 +1,5 @@
 import React from 'react'
-import { addRequest } from '../../api/api'
+import { addRemote} from '../../api/api'
 import { useState } from 'react'
 
 
@@ -23,8 +23,8 @@ const RequestWorkRemote = () => {
           }
     const{percentage, message} = request;
     const addRequestDetails = async () => {
-        const newRequest={percentage: percentage, status: false,  motivation: message, responseMotivation: ""}
-        await addRequest(newRequest);
+        const newRequest={percentage: percentage, status: "pending",  motivation: message, responseMotivation: ""}
+        await addRemote(newRequest);
     }
 
     const handleSubmit = (e) =>{

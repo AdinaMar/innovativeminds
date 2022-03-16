@@ -6,7 +6,7 @@ import {AiOutlineUsergroupDelete} from 'react-icons/ai'
 import {FiEdit} from 'react-icons/fi'
 import {Link} from 'react-router-dom'
 import {MdAddBusiness} from 'react-icons/md'
-import axios from 'axios'
+
 
 const BuildingManagement = () => {
 
@@ -18,38 +18,19 @@ const BuildingManagement = () => {
     getAllBuildings();
     
     }, [])
-        const getAllBuildings = async () => {
-         const response =  await getBuildings();
-     setBuildings(response.data)
+        
+    const getAllBuildings = async () => {
+        const response =  await getBuildings();
+       setBuildings(response.data)
+    
+    }
     
     
-        }
-
-
-        const deleteBuildingData = async (buildingId) => {
-            /* await deleteBuilding(id); */
-            axios({
-              method: 'delete',
-              headers:{'Content-Type': 'application/json; charset=utf-8'},
-              url: "http://localhost:8080/management/building", 
-              data: null,
-              params: {
-                id: buildingId
-              }    
-            })
-            getAllBuildings()  
-          }
-
-
-
-
-
-
-
-      {/*  const deleteBuildingData = async (id) => {
+    
+       const deleteBuildingData = async (id) => {
             await deleteBuilding(id)
             getAllBuildings();
-        } */}
+        } 
 
     return( 
         <>
@@ -99,5 +80,6 @@ const BuildingManagement = () => {
         </>
     )
 }
+
 
 export default BuildingManagement
