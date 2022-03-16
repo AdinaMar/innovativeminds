@@ -7,6 +7,8 @@ import axios from 'axios';
 
 const useForm = (callback,validate) => {
 
+
+
     const {setAuth} = useContext(AuthContext);
 
 
@@ -32,7 +34,9 @@ const login = async () => {
         const response = await axios.post("http://localhost:8080/login",
         JSON.stringify({email:values.email, password: values.password}),
         {
-            headers: {"Content-Type": "application/json"},
+            headers: {
+               
+            "Content-Type": "application/json"},
             withCredentials: false
         }
         );
