@@ -36,7 +36,7 @@ const AddUser = () => {
 
       const addUserDetails = async () => {
       
-        const newUser = {fristName:firstName ,lastName: lastName, email:email,  gender:gender, dateOfBirth:date, nationality: nationality, password:password, accountEnabled:true, remoteWorkPercentage:0, authority: {authorityId:3, role:role}}
+        const newUser = {name: firstName + " " + lastName, email:email,  gender:gender, birthdate:date, nationality: nationality, password:password, status:true, remote: false,  role:role}
           await addUser(newUser);
           navigate("/UsersManagement")
       }

@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { VscActivateBreakpoints } from 'react-icons/vsc'
 import {AiOutlineUsergroupDelete} from 'react-icons/ai'
 import {FiEdit} from 'react-icons/fi'
-import { getUsers } from '../../../api/api'
+import { getUsers, deleteUser } from '../../../api/api'
 import { Link } from 'react-router-dom';
 import {FaUserPlus} from 'react-icons/fa'
 import {Pagination} from 'react-custom-pagination'
-import axios from 'axios';
+
 
 
 
@@ -36,24 +36,11 @@ const UsersManagement = () => {
   
       }
   
-     {/* const deleteUserData = async (id) => {
+      const deleteUserData = async (id) => {
           await deleteUser(id)
           getAllUsers();
-      } */ }
+      }  
 
-      const deleteUsersData = async (userId) => {
-        /* await deleteBuilding(id); */
-        axios({
-          method: 'delete',
-          headers:{'Content-Type': 'application/json; charset=utf-8'},
-          url: "http://localhost:8080/management/admin/user/status/q", 
-          data: null,
-          params: {
-            id: userId
-          }    
-        })
-        getAllUsers()  
-      }
 
 
       const indexOfLastPost = currentPage * postsPerPage;
@@ -95,18 +82,18 @@ const UsersManagement = () => {
        currentPosts.filter((val) => {
           if(searchName == "") {
             return val
-          } else if (val.fristName.toLowerCase().includes(searchName.toLowerCase())) {
+          } else if (val.name.toLowerCase().includes(searchName.toLowerCase())) {
           return val
         }
       }).map(user => (
               <tr>
-                  <td>{user.fristName} {user.lastName}</td>
+                  <td>{user.name} </td>
                   <td>{user.email}</td>
-                  <td>{user.authority.role}</td>
+                  <td>{user.role}</td>
                   <td>{user.gender}</td>
                   <td>{user.nationality}</td>
-                  <td>{user.dateOfBirth}</td>
-                  <td> <Link to={`/editUser/${user.userId}`} > <FiEdit className="icons"/> </Link> <VscActivateBreakpoints className="icons"/>  <AiOutlineUsergroupDelete className="icons" onClick={()=>deleteUsersData(user.userId)}/></td>
+                  <td>{user.birthdate}</td>
+                  <td> <Link to={`/editUser/${user.id}`} > <FiEdit className="icons"/> </Link> <VscActivateBreakpoints className="icons"/>  <AiOutlineUsergroupDelete className="icons" onClick={()=>deleteUserData(user.id)}/></td>
               </tr>
           ))
       }

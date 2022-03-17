@@ -19,10 +19,10 @@ const OfficeStatus = () => {
 
     const [offices, setOffices] = useState([]);
     useEffect(() => {
-    getAllOffices();
+    getOffices();
     
     }, [])
-        const getAllOffices = async () => {
+        const getOffices = async () => {
          const response =  await getAllOffices();
      setOffices(response.data)
     
@@ -53,16 +53,16 @@ const OfficeStatus = () => {
        currentPosts.filter((val) => {
           if(searchName == "") {
             return val
-          } else if (val.officeName.toLowerCase().includes(searchName.toLowerCase())) {
+          } else if (val.name.toLowerCase().includes(searchName.toLowerCase())) {
           return val
         }
     }).map(office => (
-       <Link to={`/officeInfo/${office.officeId}`} className="office-card"> 
+       <Link to={`/officeInfo/${office.id}`} className="office-card"> 
        <img src={officestatushere} alt="office"></img>
-        <h2>{office.officeName}</h2>
-        <h4>Floor Nr: {office.floorNumber}</h4>
-        <h3>Building: {office.building.buildingName}</h3>
-        <h3>Office Admin: {office.officeAdmin.fristName} {office.officeAdmin.lastName}</h3>
+        <h2>{office.name}</h2>
+        <h4>Floor Nr: {office.floorNr}</h4>
+        <h3>Building: {office.building}</h3>
+        <h3>Office Admin: {office.officeAdministrator} </h3>
     </Link>
   ))
     }

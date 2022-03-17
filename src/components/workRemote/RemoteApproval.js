@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import { getUsers,editUser } from '../../api/api'
+import { getUsers } from '../../api/api'
 import {Pagination} from 'react-custom-pagination'
 import { Link } from 'react-router-dom'
 import userIcon from '../../images/usersstatus.png'
-import { getRemote, editRemote } from '../../api/api'
+import axios from 'axios'
 
 
 
@@ -22,11 +22,11 @@ const RemoteApproval = () => {
 
     const [requests, setRequests] = useState([]);
     useEffect(() => {
-    getAllRequests();
+    getAllUsers();
     
     }, [])
-        const getAllRequests = async () => {
-         const response =  await getRemote();
+        const getAllUsers = async () => {
+         const response =  await getUsers();
      setRequests(response.data)
     
     
@@ -41,7 +41,10 @@ const RemoteApproval = () => {
       }
 
 
-
+const approveRemote = async (id) => {
+  const res = await axios.patch(`http://localhost:3006/${id}`, {remote: true})
+  setRequests(res);
+}
       
   return (
     <>
@@ -55,16 +58,16 @@ const RemoteApproval = () => {
 
     {
        currentPosts.map(user => {
-        return !user.motivation == '' ? (
+        return !user.reason == ' ' ? (
             <div className="office-cardapproval"> 
             <div className="profilepic">
-             <h2>{user.senderId} </h2>
+             <h2>{user.name} </h2>
              <img src={userIcon} alt="user profile"></img>
              </div>
-             <p> {user.motivation}</p>
+             <p> {user.reason}</p>
              <div className="buttons">
-     <button>Approve</button>
-   <button> <Link to={`/useredRemote/${user.requestId}`} className="link">user</Link></button> 
+     <button onClick={() => approveRemote(user.id)}>Approve</button>
+   <button> <Link to={`/RejectedRemote/${user.id}`} className="link">Reject</Link></button> 
      </div>
          </div>
         ) : null;

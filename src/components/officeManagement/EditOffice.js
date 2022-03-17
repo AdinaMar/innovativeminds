@@ -25,6 +25,7 @@ const[buildings, setBuildings] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
+      getBuilding();
         loadOfficeData();
     }, []);
 
@@ -48,40 +49,15 @@ setOffice(response.data);
       }
 
       const editOfficeDetails = async () => {
-        const newOffice = {
-          officeId: id,
-          officeName: name,
-          floorNumber: floor,
-          deskCount: totalDesks,
-          usableDeskCount: usableDesks,
-          occupiedDeskCount: 0,
-          officeAdmin: {
-            userId: 2,
-            fristName: adminOffice,
-            lastName: '',
-            email: '',
-            password: '',
-            dateOfBirth: '',
-            nationality: '',
-            accountEnabled: true,
-            remoteWorkPercentage: 72,
-            authority: {
-              authorityId: 2,
-              role: 'Office Admin'
-            }
-          },
-          building: {
-            buildingId: 2,
-            buildingName: buildingName,
-            floorCount: 23,
-            address: 'Strada Principala 127'
-          }, 
+        const newOffice = {name: name, floorNr: floor, building: buildingName, desks: totalDesks, usableDesks: usableDesks, officeAdministrator: adminOffice, usedDesks:office.usedDesks, employees: office.employees}
           
          
-          usedDesks: 0,
-          desks: [],
-        };
-          await editOffice(newOffice);
+        
+          
+         
+         
+       
+          await editOffice(id, newOffice);
          navigate("/officeManagement")
       }
 
@@ -106,10 +82,12 @@ setOffice(response.data);
      </div>
      <div className='firstlastname'>
      <label htmlFor="buildingName">Building:</label>
-     <select type="text" name="name" value={name} onChange={handleChange}>
+     <select type="text" name="buildingName" value={buildingName} onChange={handleChange}>
+     <option>select</option>
        {
          buildings.map(building => (
-           <option value={building.buildingId}>{building.buildingName}</option>
+           
+           <option  value={building.name}>{building.name}</option>
          ))
        }
         </select>

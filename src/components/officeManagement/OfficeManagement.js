@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import {MdAddBusiness} from 'react-icons/md'
 import { getAllOffices, deleteOffice } from '../../api/api'
 
-import axios from 'axios'
+
 
 const OfficeManagement = () => {
 
@@ -28,10 +28,10 @@ const[searchName, setSearchName] = useState('');
             await deleteOffice(id)
             getAllOffices();
         } */ }
-        const deleteOfficeData = async (officeId) => {
+        const deleteOfficeData = async (id) => {
             /* await deleteBuilding(id); */
           await deleteOffice(id);
-            getAllOffices();
+            getOffices();
           }
   return (
     <>
@@ -63,19 +63,19 @@ const[searchName, setSearchName] = useState('');
            offices.filter((val) => {
               if(searchName == "") {
                 return val
-              } else if (val.officeName.toLowerCase().includes(searchName.toLowerCase())) {
+              } else if (val.name.toLowerCase().includes(searchName.toLowerCase())) {
               return val
             }
           }).map(office => (
                   <tr>
-                      <td>{office.officeName}</td>
-                      <td>{office.building.buildingName}</td>
-                      <td>{office.floorNumber}</td>
-                      <td>{office.deskCount}</td>
-                      <td>{office.usableDeskCount}</td>
-                      <td>{office.officeAdmin.fristName}</td>
+                      <td>{office.name}</td>
+                      <td>{office.building}</td>
+                      <td>{office.floorNr}</td>
+                      <td>{office.desks}</td>
+                      <td>{office.usableDesks}</td>
+                      <td>{office.officeAdministrator}</td>
                       
-                      <td> <Link to={`/editOffice/${office.officeId}`} > <FiEdit className="icons"/> </Link>   <AiOutlineUsergroupDelete className="icons" onClick={()=>deleteOfficeData(office.officeId)}/></td>
+                      <td> <Link to={`/editOffice/${office.id}`} > <FiEdit className="icons"/> </Link>   <AiOutlineUsergroupDelete className="icons" onClick={()=>deleteOfficeData(office.id)}/></td>
                   </tr>
               ))
           }

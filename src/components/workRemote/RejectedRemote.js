@@ -1,6 +1,6 @@
 
 import React, {useState, useEffect} from 'react'
-import { getRemote, editRemote } from '../../api/api'
+import { getUsers, editUser } from '../../api/api'
 
 import {  useParams } from 'react-router-dom'
 import userIcon from '../../images/usersstatus.png'
@@ -11,6 +11,7 @@ import userIcon from '../../images/usersstatus.png'
 const initialValues = {
     
     message: ""
+    
 
 }
 const RejectedRemote = () => {
@@ -26,7 +27,7 @@ useEffect(() => {
     loadRejectData();
 },[])
   const loadRejectData = async()=>{
-      const response = await getRemote(id);
+      const response = await getUsers(id);
       setReject(response.data);
   }
 
@@ -41,8 +42,9 @@ useEffect(() => {
 
   const editRemoteDetails = async () => {
        
-    const newReject = {requestId: id, status: "rejected", senderId: reject.senderId, motivation: reject.motivation, responseMotivation: message, percentage: remote.percentage}
-      await editRemote(id,newReject);
+    const newReject = { status: false,  reason: " ", request: message, percentage: reject.percentage, name:reject.name, email:reject.email, password:reject.password, role:reject.role,
+  gender:reject.gender, birthdate:reject.birthdate, nationality:reject.nationality, floorNr: reject.floorNr, building:reject.building,office:reject.office, remote:false}
+      await editUser(id,newReject);
      
   }
   const handleSubmit =(e) => {

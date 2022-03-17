@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { getBuildings, deleteBuilding } from '../../api/api'
-import {FaUserPlus} from 'react-icons/fa'
-import { VscActivateBreakpoints } from 'react-icons/vsc'
+
 import {AiOutlineUsergroupDelete} from 'react-icons/ai'
 import {FiEdit} from 'react-icons/fi'
 import {Link} from 'react-router-dom'
@@ -60,16 +59,16 @@ const BuildingManagement = () => {
        buildings.filter((val) => {
           if(searchName == "") {
             return val
-          } else if (val.buildingName.toLowerCase().includes(searchName.toLowerCase())) {
+          } else if (val.name.toLowerCase().includes(searchName.toLowerCase())) {
           return val
         }
       }).map(building => (
               <tr>
-                  <td>{building.buildingName}</td>
+                  <td>{building.name}</td>
                   <td>{building.address}</td>
-                  <td>{building.floorCount}</td>
+                  <td>{building.floors}</td>
                   
-                  <td> <Link to={`/editBuilding/${building.buildingId}`} > <FiEdit className="icons"/> </Link>   <AiOutlineUsergroupDelete className="icons" onClick={()=>deleteBuildingData(building.buildingId)}/></td>
+                  <td> <Link to={`/editBuilding/${building.id}`} > <FiEdit className="icons"/> </Link>   <AiOutlineUsergroupDelete className="icons" onClick={()=>deleteBuildingData(building.id)}/></td>
               </tr>
           ))
       }

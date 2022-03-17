@@ -45,8 +45,8 @@ setBuilding(response.data);
 
       const editBuildingDetails = async () => {
      
-        const newBuilding = {buildingId: id, buildingName:buildingName, address:address, floorCount:floors}
-          await editBuilding(newBuilding);
+        const newBuilding = { name:buildingName, address:address, floors:floors}
+          await editBuilding(id, newBuilding);
          navigate("/BuildingManagement")
       } 
 

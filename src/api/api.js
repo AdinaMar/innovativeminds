@@ -1,6 +1,6 @@
 import axios from "axios"
 
- const url = "http://localhost:8080/management/admin/user/status?q";
+ const url = "http://localhost:3006/users";
 
 export const getUsers = async (id) => {
     id = id || '';
@@ -15,9 +15,9 @@ export const editUser = async(id, user) => {
     return await axios.put(`${url}/${id}`, user);
 }
 
-{/*export const deleteUser = async(id) => {
+export const deleteUser = async(id) => {
     return await axios.delete(`${url}/${id}`);
-} */}
+} 
 
 {/*const urlBuilding = "http://localhost:3006/buildings";
 export const getBuildings = async (id) => {
@@ -70,7 +70,7 @@ export const addOffice = async(office) => {
     return await axios.post(urlOffice, office)
 }
 
-export const editOffice = async(office, id) => {
+export const editOffice = async(id,office) => {
     return await axios.put(`${urlOffice}/${id}`, office)
 }
  
@@ -142,9 +142,9 @@ export const getDesk =  async (id) => {
 }
 
 export const addDesk = async(desk) => {
-    return await axios.post(urlDesk, remote)
+    return await axios.post(urlDesk, desk)
 }
 
 export const editDesk = async(desk) => {
-    return await axios.put(`${urlDesk}`, remote)
+    return await axios.put(`${urlDesk}`, desk)
 }

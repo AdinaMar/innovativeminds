@@ -44,7 +44,7 @@ setUser(response.data);
 
       const editUserDetails = async () => {
        
-        const newUser = {name:firstName + " " + lastName, email:email, role:role, gender:gender, date:date, nationality: nationality}
+        const newUser = {name: firstName + " " + lastName, email:email,  gender:gender, birthdate:date, nationality: nationality, password:user.password, status:true, remote: false,  role:role}
           await editUser(id,newUser);
          navigate("/UsersManagement")
       }

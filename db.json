@@ -1,0 +1,203 @@
+{
+  "users": [
+   
+    {
+      "status": false,
+      "reason": "i have to take care of my children so i need a more flexible program ",
+      "name": "Timoficiuc Florin",
+      "email": "azwos22e@gmail.com",
+      "password": "ciaociao3",
+      "role": "Employee",
+      "gender": "Female",
+      "birthdate": "2022-03-18",
+      "nationality": "Italian",
+      "floorNr": 3,
+      "building": "Shield",
+      "office": 5,
+      "remote": false,
+      "id": 28
+    },
+    {
+      "name": "Timoficiuc Florin",
+      "email": "azw222ose@gmail.com",
+      "password": "ciaociao3",
+      "role": "Employee",
+      "gender": "Female",
+      "birthdate": "2022-03-18",
+      "nationality": "Italian",
+      "id": 29,
+      "floorNr": 3,
+      "building": "Shield",
+      "office": 5,
+      "remote": false,
+      "status": true,
+      "reason": "i have to take care of my children so i need a more flexible program",
+      "request": ""
+    },
+    {
+      "status": false,
+      "reason": "i have to take care of my children so i need a more flexible program ",
+      "name": "Timoficiuc Madalina",
+      "email": "azwo33se@gmail.com",
+      "password": "ciaociao1",
+      "role": "OfficeAdmin",
+      "gender": "Male",
+      "birthdate": "2022-03-05",
+      "nationality": "Romanian",
+      "floorNr": 3,
+      "building": "Shield",
+      "office": 5,
+      "remote": false,
+      "id": 36
+     
+    },
+    {
+      "name": "ciao Ciao",
+      "email": "cia@gmail.com",
+      "role": "Employee",
+      "gender": "Male",
+      "birthdate": "2022-03-16",
+      "nationality": "Romanian",
+      "password": "gfsgfdgd",
+      "id": 37,
+      "floorNr": 3,
+      "building": "Shield",
+      "office": 5,
+      "remote": true,
+      "status": true,
+      "reason": "i have to take care of my children so i need a more flexible program.I have to get my children to school ciaociaociao",
+      "request": ""
+    },
+    {
+      "name": "woman man",
+      "email": "woman@gmail.com",
+      "role": "Admin",
+      "gender": "Male",
+      "birthdate": "2022-03-02",
+      "nationality": "English",
+      "password": "dsfgfd",
+      "id": 38,
+      "floorNr": 3,
+      "building": "Shield",
+      "office": 5,
+      "remote": true,
+      "status": true,
+      "reason": "i have to take care of my children so i need a more flexible program.I have to get my children to school ciaociaociao",
+      "request": ""
+    },
+    {
+      "name": "Timoficiuc Florin",
+      "email": "azwose@gmail.com",
+      "role": "Employee",
+      "gender": "Male",
+      "birthdate": "2022-03-17",
+      "nationality": "Romanian",
+      "password": "hjhgj",
+      "id": 39,
+      "floorNr": 3,
+      "building": "Shield",
+      "office": 5,
+      "remote": true,
+      "status": true,
+      "reason": "i have to take care of my children so i need a more flexible program.I have to get my children to school ciaociaociao",
+      "request": ""
+    },
+    {
+      "name": "Timoficiuc Cosmin",
+      "email": "azwose@gmail.com",
+      "role": "Employee",
+      "gender": "Male",
+      "birthdate": "2022-03-17",
+      "nationality": "Romanian",
+      "password": "hjhgj",
+      "id": 39,
+      "floorNr": 3,
+      "building": "Shield",
+      "office": 5,
+      "remote": true,
+      "status": true,
+      "reason": "i have to take care of my children so i need a more flexible program.I have to get my children to school ciaociaociao",
+      "request": ""
+    }
+   
+  ],
+  "buildings": [
+    {
+      "name": "ciao",
+      "address": "Settimo Torinese, 6",
+      "floors": 7,
+      "id": 7
+    },
+    {
+      "name": "Third Building",
+      "address": "Suceava Darmanesti, 5",
+      "floors": 2,
+      "id": 8
+    },
+    {
+      "name": "four building",
+      "address": "Settimo Torinese, 6",
+      "floors": 6,
+      "id": 3
+    }
+  ],
+  "offices": [
+    {
+      "name": "Third Building",
+      "floorNr": "3",
+      "building": "Third Building",
+      "desks": "30",
+      "usableDesks": 6,
+      "officeAdministrator": "Madalina Martiniuc",
+      "usedDesks": 0,
+      "employees": [
+        {
+          "employee": "Adina Martiniuc"
+        },
+        {
+          "employee": "Dorin Tudose"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "Timoficiuc Florin",
+      "floorNr": 5,
+      "building": "Primary Building",
+      "desks": 10,
+      "usableDesks": 6,
+      "officeAdministrator": "Timoficiuc Florin",
+      "usedDesks": 0,
+      "employees": [],
+      "id": 5
+    }
+  ],
+  "remote": [
+    {
+      "requestId": 1,
+      "status": "pending",
+      "senderId": 1,
+      "motivation": "I need a more flexible program",
+      "responseMotivation": "",
+      "percentage": 30
+    },
+    {
+      "requestId": 2,
+      "status": "pending",
+      "senderId": 1,
+      "motivation": "I need a more flexible program",
+      "responseMotivation": "",
+      "percentage": 30
+    }
+  ],
+  "deskRequest": [
+    {
+      "requestId": 1,
+      "status": "pending",
+      "senderId": 1,
+      "motivation": "new view",
+      "responseMotivation": "",
+      "officeId": 1
+    }
+  ]
+}
